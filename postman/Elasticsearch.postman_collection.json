@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "41a32816-2e74-456d-b115-5c2d60560384",
+		"name": "Elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "98637"
+	},
+	"item": [
+		{
+			"name": "Indexes",
+			"item": [
+				{
+					"name": "CreateIndexValid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{dockerPort}}/cf_etf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{dockerPort}}",
+							"path": [
+								"cf_etf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateIndexInvalid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{dockerPort}}/cf_etf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{dockerPort}}",
+							"path": [
+								"cf_etf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateDoc",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name2\": \"Gold National\", \"active\": true, \"displayName\": \"Gold National\", \"excludeReferrals\": false, \"address\": { \"address\": \"123 Gold National Street\", \"address2\": \"Suite #1\", \"city\": \"Pittsburgh\", \"state\": \"PA\", \"postalCode\": \"12345\", \"country\": \"USA\"}, \"phone\": \"999-999-0001\", \"companyTypeId\": \"dme\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:62062/orgdb_orgs_v1-3/_create/goldNational2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62062",
+					"path": [
+						"orgdb_orgs_v1-3",
+						"_create",
+						"goldNational2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:62062/_template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62062",
+					"path": [
+						"_template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Text",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\": \"You will love Elasticsearch 7.0\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{dockerPort}}/_analyze",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{dockerPort}}",
+					"path": [
+						"_analyze"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "dockerPort",
+			"value": "62062"
+		}
+	]
+}
