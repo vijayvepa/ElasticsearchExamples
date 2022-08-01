@@ -462,5 +462,25 @@
     "params": [],
     "tests": [],
     "docs": "# Aliases Action API\n\n_aliases can perform multiple operations on an index/indices as an atomic operation. Supported actions include add, remove, and remove_index. Let's create a dummy index, cf_etf_to_be_deleted, by using the Index Create API\n\nThen, we can issue an aliases API with three actions:\n\n- Add a new alias named cf_etf_2 to the index named cf_etf.\n- Delete the alias named cf_etf_1.\n- Delete the dummy index, cf_etf_to_be_deleted, as shown in the request body:"
+  },
+  {
+    "_id": "b1cf7828-58c5-405d-90b1-0434b88f5c67",
+    "colId": "55b3fb6e-6933-4320-a69f-1d3fd244fe97",
+    "containerId": "7fa13fdc-a1e8-4569-8b03-f2735bd0b148",
+    "name": "ReIndexing",
+    "url": "http://localhost:{{dockerPort}}/_aliases",
+    "method": "POST",
+    "sortNum": 16250,
+    "created": "2022-08-01T12:57:52.745Z",
+    "modified": "2022-08-01T12:59:51.389Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"actions\": [\n    {\n      \"remove\": {\n        \"index\": \"cf_etf\",\n        \"alias\": \"cf_etf_production\"\n      }\n    },\n    {\n      \"add\": {\n        \"index\": \"cf_etf_new\",\n        \"alias\": \"cf_etf_production\"\n      }\n    }\n  ]\n}",
+      "form": []
+    },
+    "tests": [],
+    "docs": "# Reindexing\n\nIt is recommended to use aliases instead of indices in production. Since your current index design may not be perfect, you'll need to reindex later. For example, some fields of the documents have changed. By using an alias, you can transparently switch your application from using the old index to the new index without downtime. \n\nSuppose you use the index alias cf_etf_production, instead of the cf_etf index in your application. You successfully re-index the data from cf_etf to the new index, cf_etf_new. Then, you delete the alias from the old index and create the same alias for the new index. The index that's used in the application is switched."
   }
 ]
