@@ -667,5 +667,61 @@
     "params": [],
     "tests": [],
     "docs": "# Reindexing\n\nIt is recommended to use aliases instead of indices in production. Since your current index design may not be perfect, you'll need to reindex later. For example, some fields of the documents have changed. By using an alias, you can transparently switch your application from using the old index to the new index without downtime. \n\nSuppose you use the index alias cf_etf_production, instead of the cf_etf index in your application. You successfully re-index the data from cf_etf to the new index, cf_etf_new. Then, you delete the alias from the old index and create the same alias for the new index. The index that's used in the application is switched."
+  },
+  {
+    "_id": "1d9d7c5e-0b51-42e1-b94a-c96ed7cf8ffe",
+    "colId": "55b3fb6e-6933-4320-a69f-1d3fd244fe97",
+    "containerId": "f4819660-a73d-4bdd-a80e-e597da400832",
+    "name": "IndexStats",
+    "url": "http://localhost:{{dockerPort}}/cf_view/_stats",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-01T14:49:03.716Z",
+    "modified": "2022-08-01T14:49:45.495Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a1a28422-5472-4422-9c73-b10e92438b60",
+    "colId": "55b3fb6e-6933-4320-a69f-1d3fd244fe97",
+    "containerId": "f4819660-a73d-4bdd-a80e-e597da400832",
+    "name": "IndexSegments",
+    "url": "http://localhost:{{dockerPort}}/cf_view/_segments",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-08-01T15:48:32.783Z",
+    "modified": "2022-08-01T15:48:55.743Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "7730c16e-8362-4b6b-9e9f-22e069d07152",
+    "colId": "55b3fb6e-6933-4320-a69f-1d3fd244fe97",
+    "containerId": "f4819660-a73d-4bdd-a80e-e597da400832",
+    "name": "IndexRecovery",
+    "url": "http://localhost:{{dockerPort}}/cf_view/_recovery",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-01T15:49:07.348Z",
+    "modified": "2022-08-01T15:49:24.681Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "5b64b13d-8e1c-4258-be27-a1b5f99a5ec5",
+    "colId": "55b3fb6e-6933-4320-a69f-1d3fd244fe97",
+    "containerId": "f4819660-a73d-4bdd-a80e-e597da400832",
+    "name": "IndexShardStores",
+    "url": "http://localhost:{{dockerPort}}/cf_view/_shard_stores",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-08-01T15:49:30.920Z",
+    "modified": "2022-08-01T15:49:56.331Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
