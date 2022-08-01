@@ -18,6 +18,20 @@
         "containerId": "",
         "created": "2022-08-01T12:03:07.666Z",
         "sortNum": 20000
+      },
+      {
+        "_id": "a57dd921-d4d1-4281-9aa7-ac22eb4a2a4f",
+        "name": "Other",
+        "containerId": "",
+        "created": "2022-08-01T12:16:20.113Z",
+        "sortNum": 30000
+      },
+      {
+        "_id": "ba2a245d-d64e-4846-a9ff-bb9105fc7cb8",
+        "name": "IndexTemplates",
+        "containerId": "",
+        "created": "2022-08-01T12:16:36.201Z",
+        "sortNum": 25000
       }
     ]
   }
