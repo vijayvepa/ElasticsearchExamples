@@ -3,6 +3,7 @@
 ## Books needed to understand these examples
 
 - [Advanced Elasticsearch 7.0](https://learning.oreilly.com/api/v1/continue/9781789957754/) by Wai Tak Wong
+	- [Book Code Repo](https://github.com/PacktPublishing/Mastering-Elasticsearch-7.0)
 
 ## Tools Required to Use These Examples
 
@@ -21,6 +22,3 @@ docker-compose up
 - Open Postman and import collection
 - Or Open Thuder Client and collection in VSCode
 - Set `dockerPort` to `19200` in env vars
-
-
- 

@@ -723,5 +723,87 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "f0a070ee-5ea5-4356-8d56-5432c9cc455f",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "",
+    "name": "Upsert Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1",
+    "method": "PUT",
+    "sortNum": 10000,
+    "created": "2022-08-04T12:31:43.820Z",
+    "modified": "2022-08-04T12:35:20.266Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"symbol\": \"ACWF\",\n  \"fund_name\": \"iShares Edge MSCI Multifactor Global ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"Equity\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\n  \"exchange\": \"NYSE Arca\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "32fbd687-4c1c-4395-8deb-b1c7781e9ca1",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "",
+    "name": "Add Document without ID",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-04T12:35:43.432Z",
+    "modified": "2022-08-04T12:36:35.842Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"symbol\": \"ACWI\",\n  \"fund_name\": \"iShares MSCI ACWI ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"International\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI composed of large- and mid-capitalization developed and emerging market equities.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The index is a free float-adjusted market capitalization index designed to measure the combined equity market performance of developed and emerging markets countries.\",\n  \"exchange\": \"NASDAQ Global Market\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "98522d06-57b8-4b6d-afa3-71e6931fb4b0",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "",
+    "name": "Insert Document (option 1)",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1/_create",
+    "method": "PUT",
+    "sortNum": 15000,
+    "created": "2022-08-04T12:37:50.421Z",
+    "modified": "2022-08-04T12:38:17.913Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"symbol\": \"ACWF\",\n  \"fund_name\": \"iShares Edge MSCI Multifactor Global ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"Equity\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\n  \"exchange\": \"NYSE Arca\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "012a48d6-a7fd-491a-b1b3-98948124140a",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "",
+    "name": "Insert Document (option 2) ",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1?op_type=create",
+    "method": "PUT",
+    "sortNum": 17500,
+    "created": "2022-08-04T12:38:27.804Z",
+    "modified": "2022-08-04T12:38:56.972Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "op_type",
+        "value": "create",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"symbol\": \"ACWF\",\n  \"fund_name\": \"iShares Edge MSCI Multifactor Global ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"Equity\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\n  \"exchange\": \"NYSE Arca\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
