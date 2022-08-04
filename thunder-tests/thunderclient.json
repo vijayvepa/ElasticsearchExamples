@@ -727,13 +727,13 @@
   {
     "_id": "f0a070ee-5ea5-4356-8d56-5432c9cc455f",
     "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
-    "containerId": "",
+    "containerId": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
     "name": "Upsert Document",
     "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1",
     "method": "PUT",
     "sortNum": 10000,
     "created": "2022-08-04T12:31:43.820Z",
-    "modified": "2022-08-04T12:35:20.266Z",
+    "modified": "2022-08-04T12:40:26.131Z",
     "headers": [],
     "params": [],
     "body": {
@@ -746,13 +746,13 @@
   {
     "_id": "32fbd687-4c1c-4395-8deb-b1c7781e9ca1",
     "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
-    "containerId": "",
+    "containerId": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
     "name": "Add Document without ID",
     "url": "http://localhost:{{dockerPort}}/cf_etf/_doc",
     "method": "POST",
-    "sortNum": 20000,
+    "sortNum": 40000,
     "created": "2022-08-04T12:35:43.432Z",
-    "modified": "2022-08-04T12:36:35.842Z",
+    "modified": "2022-08-04T12:40:29.651Z",
     "headers": [],
     "params": [],
     "body": {
@@ -765,13 +765,13 @@
   {
     "_id": "98522d06-57b8-4b6d-afa3-71e6931fb4b0",
     "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
-    "containerId": "",
+    "containerId": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
     "name": "Insert Document (option 1)",
     "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1/_create",
     "method": "PUT",
-    "sortNum": 15000,
+    "sortNum": 20000,
     "created": "2022-08-04T12:37:50.421Z",
-    "modified": "2022-08-04T12:38:17.913Z",
+    "modified": "2022-08-04T12:40:27.402Z",
     "headers": [],
     "params": [],
     "body": {
@@ -784,13 +784,13 @@
   {
     "_id": "012a48d6-a7fd-491a-b1b3-98948124140a",
     "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
-    "containerId": "",
+    "containerId": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
     "name": "Insert Document (option 2) ",
     "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1?op_type=create",
     "method": "PUT",
-    "sortNum": 17500,
+    "sortNum": 30000,
     "created": "2022-08-04T12:38:27.804Z",
-    "modified": "2022-08-04T12:38:56.972Z",
+    "modified": "2022-08-04T12:40:28.559Z",
     "headers": [],
     "params": [
       {
@@ -802,6 +802,156 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"symbol\": \"ACWF\",\n  \"fund_name\": \"iShares Edge MSCI Multifactor Global ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"Equity\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\n  \"exchange\": \"NYSE Arca\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a5c7d6cb-d789-415c-82bc-42eef2bb0604",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "26232bd0-e150-40fe-b54d-9c057b4bfa14",
+    "name": "Retrieve Whole Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-04T12:45:26.056Z",
+    "modified": "2022-08-04T13:26:11.560Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "08a1b33e-96e7-4c2e-bf7d-cbcacd179c91",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "26232bd0-e150-40fe-b54d-9c057b4bfa14",
+    "name": "Retrieve Partial Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1?_source=symbol,rating,category",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-08-04T12:46:20.647Z",
+    "modified": "2022-08-04T12:47:09.644Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "_source",
+        "value": "symbol,rating,category",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0a11c4d2-1c9d-4fa1-8da9-dfdd3713c6f7",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "26232bd0-e150-40fe-b54d-9c057b4bfa14",
+    "name": "Check Document Exists",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1",
+    "method": "HEAD",
+    "sortNum": 30000,
+    "created": "2022-08-04T12:47:39.598Z",
+    "modified": "2022-08-04T12:47:57.262Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f6479f3f-4f88-4672-a509-994206267c1b",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
+    "name": "Create Index ",
+    "url": "http://localhost:{{dockerPort}}/cf_etf",
+    "method": "PUT",
+    "sortNum": 5000,
+    "created": "2022-08-04T12:48:56.106Z",
+    "modified": "2022-08-04T12:49:15.568Z",
+    "headers": []
+  },
+  {
+    "_id": "4731958d-eb8c-4fd5-8cee-048e6513d506",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "34d7dd00-b6ba-46d7-b9c9-03cb4de26fd1",
+    "name": "Update Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1/_update",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-04T13:13:07.694Z",
+    "modified": "2022-08-04T13:21:30.460Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"doc\": {\n    \"market_cap\": \"mid\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "08ee5720-dcb6-4af1-9d0e-0ed3fb740ca2",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "34d7dd00-b6ba-46d7-b9c9-03cb4de26fd1",
+    "name": "Remove Field",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1/_update",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-04T13:22:02.256Z",
+    "modified": "2022-08-04T13:23:03.283Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"script\": \"ctx._source.remove('market_cap')\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d11f5ad0-67ea-4a9c-8528-9f51df387ff3",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "8f8a0b69-8a19-47de-ac0a-4c8f77b31585",
+    "name": "Delete Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_doc/1",
+    "method": "DELETE",
+    "sortNum": 10000,
+    "created": "2022-08-04T13:25:20.633Z",
+    "modified": "2022-08-04T13:26:19.176Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b6fe3ffc-8f2c-4e4a-b72e-969120dc38ee",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+    "name": "Retrieve Multi",
+    "url": "http://localhost:{{dockerPort}}/_mget",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-04T13:29:32.677Z",
+    "modified": "2022-08-04T13:34:52.931Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"docs\":[\n        {\n            \"_index\": \"cf_etf\",\n            \"_id\": \"1\",\n            \"_source\": [\"symbol\", \"category\"]\n        },\n        {\n            \"_index\": \"cf_etf\",\n            \"_id\": \"1\",\n            \"_source\": [\"symbol\", \"category\"]\n        }\n    ]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2e2fa3f4-ca06-46d7-a871-bfd827a65c98",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+    "name": "Bulk API",
+    "url": "http://localhost:{{dockerPort}}/_bulk",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-04T13:37:31.282Z",
+    "modified": "2022-08-04T14:36:50.913Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\"delete\": {\"_index\": \"cf_etf\", \"_id\":\"1\"}}\n{\"create\": {\"_index\": \"cf_etf\", \"_id\":\"1\"}}\n{\"symbol\":\"ACWF\",\"fund_name\":\"iShares Edge MSCI Multifactor Global ETF\",\"rating\":3,\"morningstar_category\":\"World Large Stock\",\"category\":\"Equity\",\"family\":\"iShares\",\"market_cap\":\"large\",\"description\":\"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\"exchange\":\"NYSE Arca\"}\n{\"update\": {\"_index\": \"cf_etf\", \"_type\": \"_doc\", \"_id\":\"1\"}}\n{\"script\": \"ctx._source.remove('market_cap')\"}\n",
       "form": []
     },
     "tests": []

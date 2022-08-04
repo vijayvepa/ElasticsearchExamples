@@ -75,6 +75,42 @@
     "colName": "Document APIs",
     "created": "2022-08-01T15:52:12.725Z",
     "sortNum": 30000,
-    "folders": []
+    "folders": [
+      {
+        "_id": "c51ee70d-4bc5-45e6-8496-66ba258d245d",
+        "name": "Creation",
+        "containerId": "",
+        "created": "2022-08-04T12:40:23.328Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "26232bd0-e150-40fe-b54d-9c057b4bfa14",
+        "name": "Retrieval",
+        "containerId": "",
+        "created": "2022-08-04T12:40:39.686Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "34d7dd00-b6ba-46d7-b9c9-03cb4de26fd1",
+        "name": "Updating",
+        "containerId": "",
+        "created": "2022-08-04T13:09:58.110Z",
+        "sortNum": 30000
+      },
+      {
+        "_id": "8f8a0b69-8a19-47de-ac0a-4c8f77b31585",
+        "name": "RemoveDocument",
+        "containerId": "",
+        "created": "2022-08-04T13:25:08.393Z",
+        "sortNum": 40000
+      },
+      {
+        "_id": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+        "name": "Bulk",
+        "containerId": "",
+        "created": "2022-08-04T13:29:25.556Z",
+        "sortNum": 50000
+      }
+    ]
   }
 ]
