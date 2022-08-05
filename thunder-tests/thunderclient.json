@@ -955,5 +955,62 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "2ab64a29-3760-4e27-a8bb-224de497e45d",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+    "name": "UpdateByQuery API",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_update_by_query",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-04T15:05:15.049Z",
+    "modified": "2022-08-04T15:12:47.101Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\"script\": \"if (ctx._source['rating'] == 3) { ctx._source['rating'] = 4 }\"}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "8df4a399-447a-43f7-ab41-39c1b4a72cf5",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+    "name": "DeleteByQuery API",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_delete_by_query",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-08-04T15:20:18.336Z",
+    "modified": "2022-08-04T15:22:32.965Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\"query\": {\"match\": {\"rating\": 4}}}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c0a4e62a-f6d4-4394-8e5f-91a94f2fbbf6",
+    "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
+    "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
+    "name": "Copy Documents",
+    "url": "http://localhost:{{dockerPort}}/_reindex",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-04T16:10:33.040Z",
+    "modified": "2022-08-04T16:11:58.154Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"source\": {\"index\": \"cf_etf\"},\n    \"dest\": {\"index\": \"cf_view\"}\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
