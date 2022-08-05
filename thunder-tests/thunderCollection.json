@@ -112,5 +112,20 @@
         "sortNum": 50000
       }
     ]
+  },
+  {
+    "_id": "f7574596-6602-488c-897c-435ed2902e0f",
+    "colName": "Mapping APIs",
+    "created": "2022-08-05T12:29:30.364Z",
+    "sortNum": 40000,
+    "folders": [
+      {
+        "_id": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+        "name": "Dynamic Mapping",
+        "containerId": "",
+        "created": "2022-08-05T12:31:19.898Z",
+        "sortNum": 10000
+      }
+    ]
   }
 ]

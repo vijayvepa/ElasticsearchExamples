@@ -996,14 +996,33 @@
   },
   {
     "_id": "c0a4e62a-f6d4-4394-8e5f-91a94f2fbbf6",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "Index With Default Mapping",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index",
+    "method": "PUT",
+    "sortNum": 15000,
+    "created": "2022-08-04T16:10:33.040Z",
+    "modified": "2022-08-05T12:33:13.385Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"mappings\": {\n        \"dynamic_date_formats\": [\"yyyy/MM/dd\"]\n    }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b55c23bb-f60e-4d41-85be-6eb3a0286f65",
     "colId": "a4f51b13-ffc8-4aac-afed-20e032d1a925",
     "containerId": "028da5ce-25b1-4ab8-8391-09d0177c231e",
     "name": "Copy Documents",
     "url": "http://localhost:{{dockerPort}}/_reindex",
     "method": "POST",
     "sortNum": 50000,
-    "created": "2022-08-04T16:10:33.040Z",
-    "modified": "2022-08-04T16:11:58.154Z",
+    "created": "2022-08-05T12:31:05.378Z",
+    "modified": "2022-08-05T12:33:15.265Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1011,6 +1030,139 @@
       "raw": "{\n    \"source\": {\"index\": \"cf_etf\"},\n    \"dest\": {\"index\": \"cf_view\"}\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "3318670d-ff89-4eaa-b8c3-ca807f708b1b",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "Add Document",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_doc/1",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-05T12:32:30.421Z",
+    "modified": "2022-08-05T12:36:46.803Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"simple_string_value\": \"a string\",\n    \"string_w_date_value\": \"2019/02/07\",\n    \"string_w_floating_point_value\": \"1.11\",\n    \"string_w_integer_value\": \"1\",\n    \"integer_value\": 1,\n    \"floating_point_value\": 1.1,\n    \"json_object\": {\"level_1\": {\"level_2_1\": \"a string\", \"level_2_2\": 1.11} },\n    \"array_of_integer\": [1,2],\n    \"array_of_simple_string\": [\"ab\", \"cd\"],\n    \"array_of_integer_string\": [\"1\", \"2\"],\n    \"array_of_float_string\": [\"1.11\", \"2.22\"],\n    \"boolean_value\": true,\n    \"null_value\": null\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "65fdddbc-ddb8-4fd2-97b7-81daffaa102d",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "GetDocument",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_doc/1",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-05T12:36:55.639Z",
+    "modified": "2022-08-05T12:37:12.824Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8299ce3d-6a2b-4739-b989-c10c0de916f2",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "Index With Custom Mapping",
+    "url": "http://localhost:{{dockerPort}}/custom_mappings_index?include_type_name=true",
+    "method": "PUT",
+    "sortNum": 17500,
+    "created": "2022-08-05T12:38:12.048Z",
+    "modified": "2022-08-05T13:44:47.590Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "include_type_name",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"mappings\": {\n        \"_doc\": {\n            \"date_detection\": false,\n            \"numeric_detection\": true\n        }\n    }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2d22e1bb-5fb4-4cba-8591-713b42c3b413",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "Index With Custom Mapping Copy",
+    "url": "http://localhost:{{dockerPort}}/custom_mappings_index",
+    "method": "DELETE",
+    "sortNum": 18750,
+    "created": "2022-08-05T13:45:02.922Z",
+    "modified": "2022-08-05T13:45:18.512Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e786ba9f-5732-4fa2-b466-cf6a0bee019d",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "Copy Documents Copy",
+    "url": "http://localhost:{{dockerPort}}/_reindex",
+    "method": "POST",
+    "sortNum": 18125,
+    "created": "2022-08-05T13:45:42.129Z",
+    "modified": "2022-08-05T13:46:22.587Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"source\": {\"index\": \"default_mappings_index\"},\n    \"dest\": {\"index\": \"custom_mappings_index\"}\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e2a97ab6-7c80-41cc-9c88-f3ad169c46a8",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "GetMappings Default",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_mappings",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-08-05T13:46:30.347Z",
+    "modified": "2022-08-05T13:57:39.573Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "eb7bb3d9-098c-4065-b2df-dfed64f75f57",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "GetDocument Copy",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_doc/1",
+    "method": "GET",
+    "sortNum": 35000,
+    "created": "2022-08-05T13:56:47.220Z",
+    "modified": "2022-08-05T13:56:47.220Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "421f39ba-cbfe-41e0-8290-2f45925b9ed0",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
+    "name": "GetMappings Custom",
+    "url": "http://localhost:{{dockerPort}}/custom_mappings_index/_mappings",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-08-05T13:58:17.774Z",
+    "modified": "2022-08-05T13:58:48.627Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

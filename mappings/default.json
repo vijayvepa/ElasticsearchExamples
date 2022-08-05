@@ -1,0 +1,99 @@
+{
+  "default_mappings_index": {
+    "mappings": {
+      "dynamic_date_formats": ["yyyy/MM/dd"],
+      "properties": {
+        "array_of_float_string": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "array_of_integer": {
+          "type": "long"
+        },
+        "array_of_integer_string": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "array_of_simple_string": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "boolean_value": {
+          "type": "boolean"
+        },
+        "floating_point_value": {
+          "type": "float"
+        },
+        "integer_value": {
+          "type": "long"
+        },
+        "json_object": {
+          "properties": {
+            "level_1": {
+              "properties": {
+                "level_2_1": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "level_2_2": {
+                  "type": "float"
+                }
+              }
+            }
+          }
+        },
+        "simple_string_value": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "string_w_date_value": {
+          "type": "date",
+          "format": "yyyy/MM/dd"
+        },
+        "string_w_floating_point_value": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "string_w_integer_value": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
