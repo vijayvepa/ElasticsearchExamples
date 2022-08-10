@@ -17,14 +17,20 @@
 		  }
 	  },
 	  "fields": {"raw": {"type": "binary"}},
-	  "format": "yyyy/MM/dd"
+	  "format": "yyyy/MM/dd",
+	  "ignore_above": 20,
+	  "similarity": "BM25",
+	  "search_analyzer": "arabic",
+	  "normalizer": "standard"
     },
     "something2": {
       "store": false,
       "properties": {
         "something3": {
-          "type": "alias"
+          "type": "alias",
+		  "analyzer": "kuromoji"
         }
+	
       }
     }
   }
