@@ -1,0 +1,27 @@
+{
+  "properties": {
+    "something": {
+      "store": false,
+      "doc_values": false,
+      "type": "boolean",
+      "norm": false,
+	  "index_phrases": false,
+	  "index_prefixes": {"min_chars": 1, "max_chars": 5},
+	  "dynamic": false,
+	  "properties": {
+		  "something":{
+			  "type": "alias",
+			  "norm": false
+		  }
+	  }
+    },
+    "something2": {
+      "store": false,
+      "properties": {
+        "something3": {
+          "type": "alias"
+        }
+      }
+    }
+  }
+}

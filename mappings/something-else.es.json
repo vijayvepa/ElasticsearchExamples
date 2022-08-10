@@ -1,0 +1,187 @@
+{
+  "properties": {
+    "username": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "firstName": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "lastName": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "fullName": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "npiNumber": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "externalId": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "text",
+          "analyzer": "lowercase_keyword"
+        }
+      }
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "excludeReferrals": {
+      "type": "boolean"
+    },
+    "locked": {
+      "type": "boolean"
+    },
+    "orgId": {
+      "type": "text",
+      "index": "not_analyzed"
+    },
+    "topOrgId": {
+      "type": "text",
+      "index": "not_analyzed"
+    },
+    "topOrg": {
+      "properties": {
+        "id": {
+          "type": "text",
+          "index": "not_analyzed"
+        },
+        "name": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "text",
+              "analyzer": "lowercase_keyword"
+            }
+          }
+        },
+        "displayName": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "text",
+              "analyzer": "lowercase_keyword"
+            }
+          }
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "address": {
+          "properties": {
+            "address": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            },
+            "address2": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            },
+            "city": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            },
+            "state": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            },
+            "postalCode": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            },
+            "country": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "text",
+                  "analyzer": "lowercase_keyword"
+                }
+              }
+            }
+          }
+        },
+        "phone": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "text",
+              "analyzer": "lowercase_keyword"
+            }
+          }
+        }
+      }
+    },
+    "permissionSets": {
+      "type": "text",
+      "index": "not_analyzed"
+    },
+    "authorizedOrgIds": {
+      "type": "text",
+      "index": "not_analyzed"
+    },
+    "authorizedGroups": {
+      "type": "text",
+      "index": "not_analyzed"
+    },
+    "userRelatedGroups": {
+      "type": "text",
+      "index": "not_analyzed"
+    }
+  }
+}
