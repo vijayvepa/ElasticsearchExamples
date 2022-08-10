@@ -1094,7 +1094,7 @@
     "_id": "2d22e1bb-5fb4-4cba-8591-713b42c3b413",
     "colId": "f7574596-6602-488c-897c-435ed2902e0f",
     "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
-    "name": "Index With Custom Mapping Copy",
+    "name": "Delete Custom Mapping Index",
     "url": "http://localhost:{{dockerPort}}/custom_mappings_index",
     "method": "DELETE",
     "sortNum": 18750,
@@ -1108,7 +1108,7 @@
     "_id": "e786ba9f-5732-4fa2-b466-cf6a0bee019d",
     "colId": "f7574596-6602-488c-897c-435ed2902e0f",
     "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
-    "name": "Copy Documents Copy",
+    "name": "Copy Document To Custom",
     "url": "http://localhost:{{dockerPort}}/_reindex",
     "method": "POST",
     "sortNum": 18125,
@@ -1141,7 +1141,7 @@
     "_id": "eb7bb3d9-098c-4065-b2df-dfed64f75f57",
     "colId": "f7574596-6602-488c-897c-435ed2902e0f",
     "containerId": "3b753fe5-931d-44ea-8c2d-a2c1742d0b26",
-    "name": "GetDocument Copy",
+    "name": "GetDocument From DefaultMappingsIndex",
     "url": "http://localhost:{{dockerPort}}/default_mappings_index/_doc/1",
     "method": "GET",
     "sortNum": 35000,
@@ -1161,6 +1161,184 @@
     "sortNum": 50000,
     "created": "2022-08-05T13:58:17.774Z",
     "modified": "2022-08-05T13:58:48.627Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "3b105ddf-9e2a-48de-87ee-48db7ffecbc1",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "4667a55d-d84b-4814-9bd3-a86982733c9a",
+    "name": "Add Dynamic Template",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index?overwrite=true",
+    "method": "PUT",
+    "sortNum": 10000,
+    "created": "2022-08-09T13:49:37.040Z",
+    "modified": "2022-08-09T15:24:46.417Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "overwrite",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"mappings\": {\n    \"dynamic_templates\": [\n      {\n        \"integers_template\": {\n          \"match_mapping_type\": \"long\",\n          \"mapping\": {\n            \"type\": \"integer\"\n          }\n        }\n      },\n      {\n        \"field_name_template\": {\n          \"match_mapping_type\": \"string\",\n          \"match\": \"*_simple_string\",\n          \"mapping\": {\n            \"type\": \"keyword\"\n          }\n        }\n      },\n      {\n        \"path_match_template\": {\n          \"path_match\": \"json_object.*.level_2_1\",\n          \"mapping\": {\n            \"type\": \"double\"\n          }\n        }\n      }\n    ]\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fdd04954-3bdd-417c-a290-5eefdc5a7be0",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "4667a55d-d84b-4814-9bd3-a86982733c9a",
+    "name": "GetMappings Default",
+    "url": "http://localhost:{{dockerPort}}/cf_etf_toy",
+    "method": "PUT",
+    "sortNum": 5000,
+    "created": "2022-08-09T13:58:08.021Z",
+    "modified": "2022-08-10T13:18:44.780Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"mappings\": {\n        \"_meta\": {\n            \"release\": \"1.0\",\n            \"version\": \"1\"\n        },\n        \"_routing\":{\n            \"required\": \"true\"\n        },\n        \"_source\":{\n            \"enabled\": \"true\"\n        }\n    }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "70fbd4f9-6906-4666-8dc3-545288ff45eb",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "4667a55d-d84b-4814-9bd3-a86982733c9a",
+    "name": "Add Document",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_doc/1",
+    "method": "POST",
+    "sortNum": 2500,
+    "created": "2022-08-09T13:58:43.693Z",
+    "modified": "2022-08-09T13:58:46.190Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"simple_string_value\": \"a string\",\n    \"string_w_date_value\": \"2019/02/07\",\n    \"string_w_floating_point_value\": \"1.11\",\n    \"string_w_integer_value\": \"1\",\n    \"integer_value\": 1,\n    \"floating_point_value\": 1.1,\n    \"json_object\": {\"level_1\": {\"level_2_1\": \"a string\", \"level_2_2\": 1.11} },\n    \"array_of_integer\": [1,2],\n    \"array_of_simple_string\": [\"ab\", \"cd\"],\n    \"array_of_integer_string\": [\"1\", \"2\"],\n    \"array_of_float_string\": [\"1.11\", \"2.22\"],\n    \"boolean_value\": true,\n    \"null_value\": null\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2b209a69-3f12-4637-bc28-1610edb85f19",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "4667a55d-d84b-4814-9bd3-a86982733c9a",
+    "name": "Add Dynamic Template - alt",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index/_mappings",
+    "method": "PUT",
+    "sortNum": 20000,
+    "created": "2022-08-10T13:10:19.218Z",
+    "modified": "2022-08-10T13:12:05.646Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"dynamic_templates\": [\n    {\n      \"integers_template\": {\n        \"match_mapping_type\": \"long\",\n        \"mapping\": {\n          \"type\": \"integer\"\n        }\n      }\n    },\n    {\n      \"field_name_template\": {\n        \"match_mapping_type\": \"string\",\n        \"match\": \"*_simple_string\",\n        \"mapping\": {\n          \"type\": \"keyword\"\n        }\n      }\n    },\n    {\n      \"path_match_template\": {\n        \"path_match\": \"json_object.*.level_2_2\",\n        \"mapping\": {\n          \"type\": \"double\"\n        }\n      }\n    }\n  ]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6a93940c-d7c7-4349-a19e-bd0af5fe4698",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "9a0e2d6c-d295-4b9f-8180-604ed629d989",
+    "name": "Add Meta Fields",
+    "url": "http://localhost:{{dockerPort}}/default_mappings_index?overwrite=true",
+    "method": "PUT",
+    "sortNum": 10000,
+    "created": "2022-08-10T13:17:01.914Z",
+    "modified": "2022-08-10T13:17:06.343Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "overwrite",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"mappings\": {\n    \"dynamic_templates\": [\n      {\n        \"integers_template\": {\n          \"match_mapping_type\": \"long\",\n          \"mapping\": {\n            \"type\": \"integer\"\n          }\n        }\n      },\n      {\n        \"field_name_template\": {\n          \"match_mapping_type\": \"string\",\n          \"match\": \"*_simple_string\",\n          \"mapping\": {\n            \"type\": \"keyword\"\n          }\n        }\n      },\n      {\n        \"path_match_template\": {\n          \"path_match\": \"json_object.*.level_2_1\",\n          \"mapping\": {\n            \"type\": \"double\"\n          }\n        }\n      }\n    ]\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d5461c8b-f5ad-4731-8f8d-abb6aad67ced",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "9a0e2d6c-d295-4b9f-8180-604ed629d989",
+    "name": "Add Document ",
+    "url": "http://localhost:{{dockerPort}}/cf_etf_toy/_doc/1",
+    "method": "POST",
+    "sortNum": 5000,
+    "created": "2022-08-10T13:18:55.662Z",
+    "modified": "2022-08-10T13:19:17.072Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"simple_string_value\": \"a string\",\n    \"string_w_date_value\": \"2019/02/07\",\n    \"string_w_floating_point_value\": \"1.11\",\n    \"string_w_integer_value\": \"1\",\n    \"integer_value\": 1,\n    \"floating_point_value\": 1.1,\n    \"json_object\": {\"level_1\": {\"level_2_1\": \"a string\", \"level_2_2\": 1.11} },\n    \"array_of_integer\": [1,2],\n    \"array_of_simple_string\": [\"ab\", \"cd\"],\n    \"array_of_integer_string\": [\"1\", \"2\"],\n    \"array_of_float_string\": [\"1.11\", \"2.22\"],\n    \"boolean_value\": true,\n    \"null_value\": null\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "16271304-1650-4bc0-8e6a-3bd9b002d5ae",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "Create Index With Static Mapping",
+    "url": "http://localhost:{{dockerPort}}/static_mapping_index",
+    "method": "PUT",
+    "sortNum": 10000,
+    "created": "2022-08-10T13:22:29.982Z",
+    "modified": "2022-08-10T13:28:46.645Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"mappings\": {\n    \"dynamic\": false,\n    \"properties\": {\n      \"symbol\": {\n        \"type\": \"keyword\"\n      },\n      \"fund_name\": {\n        \"type\": \"text\"\n      },\n      \"rating\": {\n        \"type\": \"byte\"\n      },\n      \"morningstar_category\": {\n        \"type\": \"keyword\"\n      },\n      \"category\": {\n        \"type\": \"keyword\"\n      },\n      \"family\": {\n        \"type\": \"keyword\"\n      },\n      \"market_cap\": {\n        \"type\": \"keyword\"\n      },\n      \"description\": {\n        \"type\": \"text\",\n        \"fields\": {\n          \"row\": {\n            \"type\": \"keyword\"\n          }\n        }\n      }\n    }\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "cc5cb803-44f1-479b-8e3a-92be586f3f9e",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "Upsert Document ",
+    "url": "http://localhost:{{dockerPort}}/static_mapping_index/_doc/1",
+    "method": "PUT",
+    "sortNum": 20000,
+    "created": "2022-08-10T13:32:00.955Z",
+    "modified": "2022-08-10T13:32:27.402Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"symbol\": \"ACWF\",\n  \"fund_name\": \"iShares Edge MSCI Multifactor Global ETF\",\n  \"rating\": 3,\n  \"morningstar_category\": \"World Large Stock\",\n  \"category\": \"Equity\",\n  \"family\": \"iShares\",\n  \"market_cap\": \"large\",\n  \"description\": \"The investment seeks to track the investment results of the MSCI ACWI Diversified Multiple-Factor Index.\\\\n The fund generally will invest at least 90% of its assets in the component securities of the underlying index and in investments that have economic characteristics that are substantially identical to the component securities of the underlying index. The underlying index is designed to contain equity securities from the MSCI ACWI Index (the \\\\\\\"parent index\\\\\\\") that have high exposure to four investment style factors: value, quality, momentum and low size, while maintaining a level of risk similar to that of the parent index.\",\n  \"exchange\": \"NYSE Arca\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f1e9c5d2-2c76-4290-893d-5b124cbfad2a",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "GetMappings",
+    "url": "http://localhost:{{dockerPort}}/static_mapping_index/_mappings",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-10T13:32:38.462Z",
+    "modified": "2022-08-10T13:33:34.038Z",
     "headers": [],
     "params": [],
     "tests": []
