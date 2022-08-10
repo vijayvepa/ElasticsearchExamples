@@ -111,7 +111,31 @@
               "examples": [5]
             }
           }
-        }
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether to index the field.",
+          "examples": [true, false]
+        },
+        "fielddata": {
+          "type": "boolean",
+          "description": "Allows you to enable fielddata, which is an in-memory data structure for querying data from the text.",
+          "examples": [true, false]
+        },
+		"fields":{
+			"type": "object",
+			"description": "This provides an alternative to index the same field for a different datatype.",
+			"properties": {
+				"raw": {
+					"$ref": "#/definitions/esprop"
+				}
+			}	
+		},
+		"format":{
+			"type":"string",
+			"description": "Date format pattern for date string field values. You can customize the format or use one of the built-in formats. The default date format is strict_date_optional_time||epoch_millis. Interested readers can refer to the reference: https://www.elastic.co/guide/en/elasticsearch/reference/7.x/mapping-date-format.html",
+			"examples": ["yyyy-MM-dd", "epoch_millis", "epoch_second", "date_optional_time", "strict_date_optional_time", "strict_date_optional_time_nanos", "basic_date", "basic_date_time", "basic_date_time_no_millis", "basic_ordinal_date", "basic_ordinal_date_time", "basic_ordinal_date_time_no_millis", "basic_time", "basic_time_no_millis", "basic_t_time", "basic_t_time_no_millis", "basic_week_date", "strict_basic_week_date", "basic_week_date_time", "strict_basic_week_date_time", "date", "strict_date", "date_hour", "strict_date_hour", "date_hour_minute", "strict_date_hour_minute", "date_hour_minute_second", "strict_date_hour_minute_second", "date_hour_minute_second_fraction", "strict_date_hour_minute_second_fraction", "date_time", "strict_date_time", "date_time_no_millis", "strict_date_time_no_millis", "hour", "strict_hour", "hour_minute", "strict_hour_minute", "hour_minute_second", "strict_hour_minute_second", "hour_minute_second_fraction", "strict_hour_minute_second_fraction", "hour_minute_second_millis", "strict_hour_minute_second_millis", "ordinal_date", "strict_ordinal_date",  "ordinal_date_time", "strict_ordinal_date_time", "ordinal_date_time_no_millis", "strict_ordinal_date_no_millis", "time", "strict_time", "time_no_millis", "strict_time_no_millis", "t_time", "strict_t_time", "t_time_no_millis", "strict_t_time_no_millis", "week_date", "strict_week_date", "week_date_time", "strict_week_date_time", "week_date_time_no_millis", "strict_week_date_time_no_millis", "weekyear", "strict_weekyear", "weekyear_week", "strict_weekyear_week", "weekyear_week_day", "strict_weekyear_week_day", "year", "strict_year", "year_month", "strict_year_month", "year_month_day", "strict_year_month_day"]
+		}
       }
 	  }
   }

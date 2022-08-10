@@ -3,17 +3,21 @@
     "something": {
       "store": false,
       "doc_values": false,
-      "type": "boolean",
+      "type": "keyword",
       "norm": false,
 	  "index_phrases": false,
 	  "index_prefixes": {"min_chars": 1, "max_chars": 5},
 	  "dynamic": false,
+	  "enabled": true,
+	  "fielddata": true,
 	  "properties": {
 		  "something":{
 			  "type": "alias",
 			  "norm": false
 		  }
-	  }
+	  },
+	  "fields": {"raw": {"type": "binary"}},
+	  "format": "yyyy/MM/dd"
     },
     "something2": {
       "store": false,
