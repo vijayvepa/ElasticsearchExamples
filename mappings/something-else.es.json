@@ -55,7 +55,7 @@
       }
     },
     "active": {
-      "type": "boolean"
+      "type": "float"
     },
     "excludeReferrals": {
       "type": "boolean"
@@ -65,17 +65,17 @@
     },
     "orgId": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     },
     "topOrgId": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     },
     "topOrg": {
       "properties": {
         "id": {
           "type": "text",
-          "index": "not_analyzed"
+          "index": false
         },
         "name": {
           "type": "text",
@@ -169,19 +169,19 @@
     },
     "permissionSets": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     },
     "authorizedOrgIds": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     },
     "authorizedGroups": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     },
     "userRelatedGroups": {
       "type": "text",
-      "index": "not_analyzed"
+      "index": false
     }
   }
 }
