@@ -10,24 +10,6 @@
       "type": "string",
       "$ref": "#/definitions/esanalyze"
     },
-
-    "tokenizer": {
-      "description": "Split the Output of Character Filters into Unique Terms",
-      "anyOf": [
-        { "$ref": "#/definitions/estokenizer" },
-        { "$ref": "#/definitions/estokenizerpartialword" },
-        { "$ref": "#/definitions/estokenizerstructpattern" },
-		{"$ref": "#/definitions/estokenizerchargroup"},
-		{"$ref": "#/definitions/estokenizerpathhierarchy"}
-      ]
-    },
-    "filter": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "$ref": "#/definitions/esfilter"
-      }
-    },
     "char_filter": {
       "type": "array",
       "description": "Convert original input text into a stream of characters then preprocess it before passing it as an input to tokenizer",
@@ -37,6 +19,28 @@
           { "$ref": "#/definitions/escharfiltermap" },
           { "$ref": "#/definitions/escharfilterpattern" }
         ]
+      }
+    },
+    "tokenizer": {
+      "description": "Split the Output of Character Filters into Unique Terms",
+      "anyOf": [
+        { "$ref": "#/definitions/estokenizer" },
+        { "$ref": "#/definitions/esngram" },
+        { "$ref": "#/definitions/estokenizerstructpattern" },
+		{"$ref": "#/definitions/estokenizerchargroup"},
+		{"$ref": "#/definitions/estokenizerpathhierarchy"}
+      ]
+    },
+    "filter": {
+      "type": "array",
+      "items": {
+		"anyOf": [
+			{ "$ref": "#/definitions/estokenfilter" },
+			{ "$ref": "#/definitions/estokenfilter_asciifolding" },
+			{ "$ref": "#/definitions/esngram" },
+			{"$ref": "#/definitions/estokenfilter_fingerprint"},
+			{ "$ref": "#/definitions/estokenfilter_keep" }
+		]        
       }
     }
   },
@@ -92,11 +96,6 @@
       ]
     },
 
-    "esfilter": {
-      "type": "string",
-      "default": "lowercase",
-      "enum": ["lowercase"]
-    },
     "escharfilter": {
       "type": "string",
 
@@ -149,7 +148,7 @@
         "pattern"
       ]
     },
-    "estokenizerpartialword": {
+    "esngram": {
       "type": "object",
       "properties": {
         "type": {
@@ -251,6 +250,100 @@
         "skip": {
           "description": "This uses the path separator to split the input character stream into terms - skip: the number of generated terms to skip",
           "type": "integer"
+        }
+      }
+    },
+    "estokenfilter": {
+      "type": "string",
+      "default": "lowercase",
+      "enum": ["lowercase", "uppercase", "fingerprint"]
+    },
+    "estokenfilter_asciifolding": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["asciifolding"]
+        },
+        "preserve_original": {
+          "type": "boolean",
+          "default": false,
+          "description": "This transforms the terms when letters, numbers, and unicode symbols are not in the first 127 ASCII characters to ASCII - retain the original terms"
+        }
+      }
+    },
+    "estokenfilter_fingerprint": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["fingerprint"]
+        },
+        "separator": {
+          "type": "string",
+          "default": " ",
+          "description": "Sort, deduplicate, and concatenate the terms from the tokenizer into one term. - The separator parameter (this defaults to the space character) can be set to another character. "
+        },
+        "max_output_size": {
+          "type": "integer",
+          "default": 255,
+          "description": "Sort, deduplicate, and concatenate the terms from the tokenizer into one term. - The max_output_size parameter (this defaults to 255) will restrict the emitting of the final concatenated term. "
+        }
+      }
+    },
+    "estokenfilter_keep": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["keep"]
+        },
+        "keep_words": {
+          "description": "Only those terms defined in the list of specified words are kept. Three options are provided: the keep_words parameter allows you to specify a list of words in the filter ",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keep_words_path": {
+          "type": "array",
+          "description": "the keep_words_path parameter allows you to specify a list of words in the file path; ",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keep_words_case": {
+          "type": "boolean",
+          "default": false,
+          "description": "the keep_words_case parameter (this defaults to false) converts the terms to lowercase. "
+        }
+      }
+    },
+    "estokenfilter_keeptypes": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["keep_types"]
+        },
+        "types": {
+          "description": "Only those terms defined in the list of specified token types are kept. ",
+          "type": "array",
+          "items": {
+            "type": "string",
+			"enum": ["<NUM>", "<ALPHANUM>", "<ALPHA>"]
+          }
+        },
+        "mode": {
+          "type": "string",
+          "description": "the keep_words_path parameter allows you to specify a list of words in the file path; ",
+		  "default": "exclude",
+          "enum": ["include", "exclude"]
+        },
+        "keep_words_case": {
+          "type": "boolean",
+          "default": false,
+          "description": "the keep_words_case parameter (this defaults to false) converts the terms to lowercase. "
         }
       }
     }

@@ -1,4 +1,5 @@
 {
-  "text": "/usr/local",
-  "tokenizer": {"type": "path_hierarchy", "replacement": "*"}
+  "text": "You'll love Elasticsearch 7.0",
+  "tokenizer": "standard",
+  "filter": [{"type": "keep", "keep_words": ["Elasticsearch", "love"]}]
 }
