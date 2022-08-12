@@ -1682,5 +1682,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "d0ed2af9-3688-416d-bdb8-cf21af140801",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "Ngram Tokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2022-08-12T15:28:03.803Z",
+    "modified": "2022-08-12T15:37:59.639Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"Elasticsearch 7.0\",\n\t\"tokenizer\": {\n    \"type\": \"edge_ngram\",\n    \"min_gram\": 2,\n    \"max_gram\": 2,\n    \"token_chars\": [\"punctuation\", \"digit\"]\n  }\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6746a268-3f0f-44cf-bf97-e05a36053dfe",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "EdgeNgram Tokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2022-08-12T15:37:17.539Z",
+    "modified": "2022-08-12T15:37:17.539Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"Elasticsearch 7.0\",\n\t\"tokenizer\": {\n    \"type\": \"ngram\",\n    \"min_gram\": 2,\n    \"max_gram\": 2,\n    \"token_chars\": [\"punctuation\", \"digit\"]\n  }\n\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

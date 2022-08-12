@@ -13,8 +13,10 @@
 
     "tokenizer": {
       "description": "Split the Output of Character Filters into Unique Terms",
-      "type": "string",
-      "$ref": "#/definitions/estokenizer"
+      "anyOf": [
+        { "$ref": "#/definitions/estokenizer" },
+        { "$ref": "#/definitions/estokenizerpartialword" }
+      ]
     },
     "filter": {
       "type": "array",
@@ -89,7 +91,15 @@
     "estokenizer": {
       "type": "string",
       "default": "standard",
-      "enum": ["standard", "letter", "lowercase", "whitespace", "uax_url_email", "classic","thai"]
+      "enum": [
+        "standard",
+        "letter",
+        "lowercase",
+        "whitespace",
+        "uax_url_email",
+        "classic",
+        "thai"
+      ]
     },
     "esfilter": {
       "type": "string",
@@ -130,6 +140,33 @@
         "replacement": {
           "description": "Regular expression for replacing token",
           "type": "string"
+        }
+      }
+    },
+    "estokenizerpartialword": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["ngram", "edge_ngram"]
+        },
+        "min_gram": {
+          "description": "This slides along the input character stream to provide items in the specified length of the specified characters. It uses min_gram (this defaults to 1) and max_gram(this defaults to 2) to specify the length",
+          "type": "integer",
+          "default": 1
+        },
+        "max_gram": {
+          "description": "This slides along the input character stream to provide items in the specified length of the specified characters. It uses min_gram (this defaults to 1) and max_gram(this defaults to 2) to specify the length",
+          "type": "integer",
+          "default": 2
+        },
+        "token_chars": {
+          "description": "This slides along the input character stream to provide items in the specified length of the specified characters. token_chars is used to specify the letters, digits, whitespace, punctuation, and symbol.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["letter", "digit", "whitespace", "punctuation", "symbol"]
+          }
         }
       }
     }

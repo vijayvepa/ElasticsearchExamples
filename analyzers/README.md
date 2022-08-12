@@ -93,3 +93,35 @@ This is similar to the standard tokenizer, but uses Thai text.
 - `["คุณ, "จะ", "รัก", "Elasticsearch", "7.0"]`
 
 ### Partial Word Tokenizers
+
+#### ngram
+
+This slides along the input character stream to provide items in the specified length of the specified characters. It uses `min_gram` (this defaults to `1`) and `max_gram`(this defaults to `2`) to specify the length and `token_chars` to specify the `letters`, `digits`, `whitespace`, `punctuation`, and `symbol`.
+
+```json
+{
+  "type": "ngram",
+  "min_gram": 2,
+  "max_gram": 2,
+  "token_chars": ["punctuation", "digit"]
+}
+```
+
+- `"Elasticsearch 7.0"` =>
+- `["7.", ".0"]`
+
+#### edge_ngram
+
+This is similar to the ngram tokenizer. The difference is that each item is anchored to the starting point of the candidate words.
+
+```json
+{
+  "type": "edge_ngram",
+  "min_gram": 2,
+  "max_gram": 2,
+  "token_chars": ["punctuation", "digit"]
+}
+```
+
+- `"Elasticsearch 7.0"` =>
+- `["7."]`
