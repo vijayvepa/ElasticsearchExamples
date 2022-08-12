@@ -161,7 +161,7 @@
           "fields": {
             "raw": {
               "type": "text",
-              "analyzer": "lowercase_keyword"
+              "analyzer": "keyword"
             }
           }
         }

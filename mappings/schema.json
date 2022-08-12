@@ -2,6 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
+	  "dynamic":{
+		  "type":"boolean",
+		  "description": "whether to use dynamic mappings, default true",
+		  "default":true,
+		  "enum": [true, false]
+	  },
     "properties": {
       "type": "object",
       "patternProperties": {

@@ -1,0 +1,14 @@
+{
+	"dynamic": false,
+	"properties": {
+		"symbol": {"type": "keyword"},
+		"fund_name": {"type": "text"},
+		"rating":{"type":"byte"},
+		"morningstar_category":{"type": "keyword"},
+		"category": {"type": "keyword"},
+		"family":{"type":"keyword"},
+		"market_cap":{"type":"keyword"},
+		"description":{"type":"text", "fields": {"raw": {"type": "keyword"}}},
+		"exchange":{"type":"keyword"}
+	}
+}

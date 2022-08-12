@@ -1342,5 +1342,98 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "2a309b7b-0178-4489-bca1-d6c90897e296",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "UpdateMappings",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_mappings",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2022-08-11T16:58:04.787Z",
+    "modified": "2022-08-12T11:52:51.477Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"dynamic\": false,\n\t\"properties\": {\n\t\t\"symbol\": {\"type\": \"keyword\"},\n\t\t\"fund_name\": {\"type\": \"text\"},\n\t\t\"rating\":{\"type\":\"byte\"},\n\t\t\"morningstar_category\":{\"type\": \"keyword\"},\n\t\t\"category\": {\"type\": \"keyword\"},\n\t\t\"family\":{\"type\":\"keyword\"},\n\t\t\"market_cap\":{\"type\":\"text\"},\n\t\t\"description\":{\"type\":\"text\", \"fields\": {\"raw\": {\"type\": \"keyword\"}}},\n\t\t\"exchange\":{\"type\":\"keyword\"}\n\t}\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "be986725-93d5-412d-bc65-2babc0c75a2a",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "Delete Index",
+    "url": "http://localhost:{{dockerPort}}/cf_etf",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2022-08-12T11:51:04.685Z",
+    "modified": "2022-08-12T11:51:16.306Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2ae552fc-e806-49ec-bac7-281c723a6508",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "Refresh Mappings",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_update_by_query?refresh",
+    "method": "POST",
+    "sortNum": 45000,
+    "created": "2022-08-12T11:53:20.376Z",
+    "modified": "2022-08-12T11:53:59.298Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "refresh",
+        "value": "",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "70aef71d-fd8e-4870-95b3-5555e3e3678a",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "Search Document",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_mappings?include_type_name=false",
+    "method": "GET",
+    "sortNum": 47500,
+    "created": "2022-08-12T11:55:09.337Z",
+    "modified": "2022-08-12T11:58:13.552Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "include_type_name",
+        "value": "false",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "eb1520ef-f616-4e56-8786-3d0a24d93e60",
+    "colId": "f7574596-6602-488c-897c-435ed2902e0f",
+    "containerId": "b7e7202d-e114-44c6-9fa0-86474c8eb4df",
+    "name": "GetMapping Without Type Name",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=exchange:\"NYSE Arca\"",
+    "method": "GET",
+    "sortNum": 48750,
+    "created": "2022-08-12T11:57:40.663Z",
+    "modified": "2022-08-12T11:57:40.663Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "exchange:\"NYSE Arca\"",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
