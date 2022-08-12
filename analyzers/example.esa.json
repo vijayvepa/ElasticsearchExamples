@@ -1,7 +1,4 @@
 {
-	"text": "<body>You'll love Elasticsearch 7.0</body>",
-	"tokenizer": "standard",
-	"filter": ["lowercase"],
-	"char_filter": ["html_strip", {"type": "mapping", "mappings": ["You'll => You will"]}, {"type": "pattern_replace", "pattern": "(\\d+).(\\d+)", "replacement": "v$1"}]
-
+	"text": "POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local",
+	"tokenizer": "classic"
 }

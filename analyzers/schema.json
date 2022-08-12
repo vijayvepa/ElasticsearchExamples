@@ -89,7 +89,7 @@
     "estokenizer": {
       "type": "string",
       "default": "standard",
-      "enum": ["standard"]
+      "enum": ["standard", "letter", "lowercase", "whitespace", "uax_url_email", "classic","thai"]
     },
     "esfilter": {
       "type": "string",

@@ -1,7 +1,9 @@
-# Analyzers
+# 1. Analyzers
 
-## Workflow
+## 1.1. Workflow
+
 - Index operation
+
   - Contents Processed by Analyzer
   - Generated tokens are used to build an inverted index
 
@@ -9,27 +11,85 @@
   - Query content is processed by Search Analyzer to Generate tokens for matching
   - Generated tokens are matched against inverted index
 
-## Analyzer Components
+## 1.2. Analyzer Components
 
 - Inverted Index
- - Lists of Unique Words and Document Ids they Appear in
- - List of Word Frequencies
+- Lists of Unique Words and Document Ids they Appear in
+- List of Word Frequencies
 
-### Analyzer
+### 1.2.1. Analyzer
+
 - N `Character Filters`
-	- Add/Remove Characters from Input String
+  - Add/Remove Characters from Input String
 - 1 `Tokenizer`
-	- Split the Output of Character Filters into Unique Terms
+  - Split the Output of Character Filters into Unique Terms
 - N `Token Filters`
-	- Add/Remove Characters from Terms
+  - Add/Remove Characters from Terms
 
-### Standard analyzer
+### 1.2.2. Standard analyzer
 
 `"<body>You'll love Elasticsearch 7.0.</body>".`
+
 - `Standard` Tokenizer
-	- Grammar based tokenization
-	- `[body, You'll, love, Elasticsearch, 7.0, body]`  
+
+  - Grammar based tokenization
+  - `[body, You'll, love, Elasticsearch, 7.0, body]`
 
 - `Lowercase` Token Filter
-	- Normalize tokens to lowercase
-	- `[body, you'll, love, elasticsearch, 7.0, body]`
+  - Normalize tokens to lowercase
+  - `[body, you'll, love, elasticsearch, 7.0, body]`
+
+## 1.3. Tokenizers
+
+### 1.3.1. Word-Oriented Tokenizers
+
+#### 1.3.1.1. standard
+
+This is grammar-based tokenization. It supports the `max_token_length` parameter to divide the input text into segments.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local"` =>
+- `[POST, https, "api.iextrading.com", "1.0", "stock", "acwf", "company", "usr", "local"]`
+
+#### 1.3.1.2. letter
+
+This uses non-letters as separators to split the character stream into terms.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local"` =>
+- `["POST", "https", "api", "iextrading", "com", "stock", "acwf", "company", "usr", "local"]`
+
+#### 1.3.1.3. lowercase
+
+Similar to the letter tokenizer, it uses non-letters as separators to tokenize the input text. In addition, it also converts the lettersfrom uppercase to lowercase.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local"` =>
+- `["post", "https", "api", "iextrading", "com", "stock", "acwf", "company", "usr", "local"]`
+
+#### 1.3.1.4. whitespace
+
+This uses whitespace characters as separators to split the character stream into terms.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local"` =>
+- `["POST", "https://api.iextrading.com/1.0/stock/acwf/company", "/usr/local"]`
+
+#### 1.3.1.5. uax_url_email
+
+This splits character streams into URL format terms and email address format terms.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local"` =>
+- `["POST", "https://api.iextrading.com/1.0/stock/acwf/company", "usr", "local"]`
+
+#### 1.3.1.6. classic
+
+This is grammar-based tokenization. Additionally, it uses punctuation as a separator but retains some special formatting, such as dots between the non-whitespace characters, hyphens between the numbers, email addresses, and internet hostnames.
+
+- `"POST https://api.iextrading.com/1.0/stock/acwf/company 192.168.0.1 100-123"`=>
+- `["POST", "https", "api.iextrading.com", "1.0/stock", "acwf", "company", "192.168.0.1", "100-123"]`
+
+#### 1.3.1.7. thai
+
+This is similar to the standard tokenizer, but uses Thai text.
+
+- `"คุณจะรัก Elasticsearch 7.0"` =>
+- `["คุณ, "จะ", "รัก", "Elasticsearch", "7.0"]`
+
+### Partial Word Tokenizers

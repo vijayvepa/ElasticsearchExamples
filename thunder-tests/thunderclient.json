@@ -1549,5 +1549,138 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "f91a06b8-4a28-406f-8327-d5ebb602d1fc",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "StandardTokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T14:25:04.152Z",
+    "modified": "2022-08-12T14:25:21.947Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"standard\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fff93ede-715f-4b5f-aa77-34585424df1b",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "LetterTokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-12T14:25:55.408Z",
+    "modified": "2022-08-12T14:31:35.420Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"uax_url_email\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "76b062ac-11dd-4f50-8b3f-4143efe7cbf8",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "LowercaseTokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-12T14:26:19.234Z",
+    "modified": "2022-08-12T14:34:48.776Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"lowercase\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fc375cfe-d461-421d-9ce8-d5ba0e6e140f",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "WhitespaceTokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-08-12T14:35:00.223Z",
+    "modified": "2022-08-12T14:37:20.787Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"whitespace\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "32ad1af4-03d3-4d90-98bb-98117adc69aa",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "URL Email Tokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-12T14:37:29.594Z",
+    "modified": "2022-08-12T14:51:54.984Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"uax_url_email\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "77404b86-a370-497c-96f1-33ef7d78a2e4",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "Classic Tokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-08-12T14:52:12.861Z",
+    "modified": "2022-08-12T14:54:38.747Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local\",\n\t\"tokenizer\": \"classic\"\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "907263c8-67f0-417d-96b0-87dabc02ff07",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "name": "Thai Tokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2022-08-12T14:55:07.812Z",
+    "modified": "2022-08-12T14:55:37.087Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"คุณจะรัก Elasticsearch 7.0\",\n\t\"tokenizer\": \"thai\"\n\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
