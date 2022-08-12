@@ -1,0 +1,11 @@
+dynamic: true
+properties:
+  test:
+    type: text
+    fields:
+      raw:
+        type: keyword
+  something:
+    type: keyword
+  somethingElse:
+    norm: true

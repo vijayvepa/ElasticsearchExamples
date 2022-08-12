@@ -1435,5 +1435,62 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "afde1d41-e581-4302-866d-814aa412e384",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "c2f4ef5a-6e48-4c12-9393-3e6605c97664",
+    "name": "Tokenize",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T12:27:43.333Z",
+    "modified": "2022-08-12T12:32:00.133Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"text\": \"<body>You'll love elasticsearch 7.0</body>\",\n    \"tokenizer\": \"standard\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "557c8ef0-d821-44f1-8dc6-3252be282ee8",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "c2f4ef5a-6e48-4c12-9393-3e6605c97664",
+    "name": "Tokenize And Filter",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-12T12:30:08.035Z",
+    "modified": "2022-08-12T12:32:01.303Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"text\": \"<body>You'll love elasticsearch 7.0</body>\",\n    \"tokenizer\": \"standard\",\n    \"filter\": [\"lowercase\"]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "95da9844-cf28-4654-bb57-b7104e293c31",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "c2f4ef5a-6e48-4c12-9393-3e6605c97664",
+    "name": "Tokenize And Filter - Alt",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-12T12:30:42.718Z",
+    "modified": "2022-08-12T12:32:02.414Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"text\": \"<body>You'll love elasticsearch 7.0</body>\",\n    \"analyzer\": \"standard\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
