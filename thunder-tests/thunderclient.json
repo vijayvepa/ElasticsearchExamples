@@ -1853,5 +1853,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "48b702ef-5aea-4748-ac55-74d7cb460dc9",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "PathHierarchy Copy",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T17:02:15.550Z",
+    "modified": "2022-08-12T17:02:17.921Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"/usr/local\",\n  \"tokenizer\": {\"type\": \"path_hierarchy\", \"replacement\": \"*\"}\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]
