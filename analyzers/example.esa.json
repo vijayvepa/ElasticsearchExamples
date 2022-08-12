@@ -1,9 +1,4 @@
 {
-  "text": "POST https://api.iextrading.com/1.0/stock/acwf/company /usr/local",
-  "tokenizer": {
-    "type": "edge_ngram",
-    "min_gram": 2,
-    "max_gram": 2,
-    "token_chars": ["punctuation", "digit"]
-  }
+  "text": "/usr/local",
+  "tokenizer": {"type": "path_hierarchy", "replacement": "*"}
 }

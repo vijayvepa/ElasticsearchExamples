@@ -15,7 +15,10 @@
       "description": "Split the Output of Character Filters into Unique Terms",
       "anyOf": [
         { "$ref": "#/definitions/estokenizer" },
-        { "$ref": "#/definitions/estokenizerpartialword" }
+        { "$ref": "#/definitions/estokenizerpartialword" },
+        { "$ref": "#/definitions/estokenizerstructpattern" },
+		{"$ref": "#/definitions/estokenizerchargroup"},
+		{"$ref": "#/definitions/estokenizerpathhierarchy"}
       ]
     },
     "filter": {
@@ -88,19 +91,7 @@
         "openkoreantext-analyzer"
       ]
     },
-    "estokenizer": {
-      "type": "string",
-      "default": "standard",
-      "enum": [
-        "standard",
-        "letter",
-        "lowercase",
-        "whitespace",
-        "uax_url_email",
-        "classic",
-        "thai"
-      ]
-    },
+
     "esfilter": {
       "type": "string",
       "default": "lowercase",
@@ -143,6 +134,21 @@
         }
       }
     },
+    "estokenizer": {
+      "type": "string",
+      "default": "standard",
+      "enum": [
+        "standard",
+        "letter",
+        "lowercase",
+        "whitespace",
+        "uax_url_email",
+        "classic",
+        "thai",
+        "keyword",
+        "pattern"
+      ]
+    },
     "estokenizerpartialword": {
       "type": "object",
       "properties": {
@@ -164,9 +170,87 @@
           "description": "This slides along the input character stream to provide items in the specified length of the specified characters. token_chars is used to specify the letters, digits, whitespace, punctuation, and symbol.",
           "type": "array",
           "items": {
-            "type": "string",
-            "enum": ["letter", "digit", "whitespace", "punctuation", "symbol"]
+            "$ref": "#/definitions/estokentype"
           }
+        }
+      }
+    },
+    "estokenizerstructpattern": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["pattern", "simple_pattern", "simple_pattern_split"]
+        },
+        "pattern": {
+          "description": "Specify regular expression",
+          "type": "string",
+          "default": "\\W+"
+        },
+        "flag": {
+          "description": "Specify the flag of the Java regular expression",
+          "type": "string"
+        },
+        "group": {
+          "description": "Specify the group matched",
+          "type": "string"
+        }
+      }
+    },
+    "estokentype": {
+      "type": "string",
+      "enum": ["letter", "digit", "whitespace", "punctuation", "symbol"]
+    },
+    "estokenizerchargroup": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["char_group"]
+        },
+        "tokenize_on_chars": {
+          "description": "You can define a set of separators to split the input character stream into terms. Use tokenize_on_chars to specify a list of separators.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/estokentype"
+          }
+        },
+        "flag": {
+          "description": "Specify the flag of the Java regular expression",
+          "type": "string"
+        },
+        "group": {
+          "description": "Specify the group matched",
+          "type": "string"
+        }
+      }
+    },
+    "estokenizerpathhierarchy": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["path_hierarchy"]
+        },
+        "replacement": {
+          "description": "This uses the path separator to split the input character stream into terms - replacement: the character to replace the delimiter",
+          "type": "string"
+        },
+        "delimiter": {
+          "description": "This uses the path separator to split the input character stream into terms - delimiter: the separator",
+          "type": "string"
+        },
+        "buffer_size": {
+          "description": "This uses the path separator to split the input character stream into terms - buffer_size: the maximum length in one batch",
+          "type": "integer"
+        },
+        "reverse": {
+          "description": "This uses the path separator to split the input character stream into terms - reverse: this reverses the generated terms",
+          "type": "boolean"
+        },
+        "skip": {
+          "description": "This uses the path separator to split the input character stream into terms - skip: the number of generated terms to skip",
+          "type": "integer"
         }
       }
     }

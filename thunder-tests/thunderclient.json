@@ -1553,13 +1553,13 @@
   {
     "_id": "f91a06b8-4a28-406f-8327-d5ebb602d1fc",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "StandardTokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-08-12T14:25:04.152Z",
-    "modified": "2022-08-12T14:25:21.947Z",
+    "modified": "2022-08-12T16:08:52.759Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1572,13 +1572,13 @@
   {
     "_id": "fff93ede-715f-4b5f-aa77-34585424df1b",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "LetterTokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-08-12T14:25:55.408Z",
-    "modified": "2022-08-12T14:31:35.420Z",
+    "modified": "2022-08-12T16:08:55.549Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1591,13 +1591,13 @@
   {
     "_id": "76b062ac-11dd-4f50-8b3f-4143efe7cbf8",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "LowercaseTokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-08-12T14:26:19.234Z",
-    "modified": "2022-08-12T14:34:48.776Z",
+    "modified": "2022-08-12T16:08:59.428Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1610,13 +1610,13 @@
   {
     "_id": "fc375cfe-d461-421d-9ce8-d5ba0e6e140f",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "WhitespaceTokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 40000,
     "created": "2022-08-12T14:35:00.223Z",
-    "modified": "2022-08-12T14:37:20.787Z",
+    "modified": "2022-08-12T16:09:01.229Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1629,13 +1629,13 @@
   {
     "_id": "32ad1af4-03d3-4d90-98bb-98117adc69aa",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "URL Email Tokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 50000,
     "created": "2022-08-12T14:37:29.594Z",
-    "modified": "2022-08-12T14:51:54.984Z",
+    "modified": "2022-08-12T16:09:03.130Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1648,13 +1648,13 @@
   {
     "_id": "77404b86-a370-497c-96f1-33ef7d78a2e4",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "Classic Tokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 60000,
     "created": "2022-08-12T14:52:12.861Z",
-    "modified": "2022-08-12T14:54:38.747Z",
+    "modified": "2022-08-12T16:09:05.156Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1667,13 +1667,13 @@
   {
     "_id": "907263c8-67f0-417d-96b0-87dabc02ff07",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "789c4e71-6d75-496d-9409-52ab2ecfac51",
     "name": "Thai Tokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
     "sortNum": 70000,
     "created": "2022-08-12T14:55:07.812Z",
-    "modified": "2022-08-12T14:55:37.087Z",
+    "modified": "2022-08-12T16:09:07.035Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1686,13 +1686,13 @@
   {
     "_id": "d0ed2af9-3688-416d-bdb8-cf21af140801",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "ae1b3bea-aaa1-4f48-b0c4-e5edcba577ed",
     "name": "Ngram Tokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
-    "sortNum": 80000,
+    "sortNum": 10000,
     "created": "2022-08-12T15:28:03.803Z",
-    "modified": "2022-08-12T15:37:59.639Z",
+    "modified": "2022-08-12T16:09:09.825Z",
     "headers": [],
     "params": [],
     "body": {
@@ -1705,18 +1705,151 @@
   {
     "_id": "6746a268-3f0f-44cf-bf97-e05a36053dfe",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "0dd4e18f-6afe-418f-aa99-7a7ead636cba",
+    "containerId": "ae1b3bea-aaa1-4f48-b0c4-e5edcba577ed",
     "name": "EdgeNgram Tokenizer",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
-    "sortNum": 90000,
+    "sortNum": 20000,
     "created": "2022-08-12T15:37:17.539Z",
-    "modified": "2022-08-12T15:37:17.539Z",
+    "modified": "2022-08-12T16:09:11.266Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n\t\"text\": \"Elasticsearch 7.0\",\n\t\"tokenizer\": {\n    \"type\": \"ngram\",\n    \"min_gram\": 2,\n    \"max_gram\": 2,\n    \"token_chars\": [\"punctuation\", \"digit\"]\n  }\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "708fbd98-63d6-4749-8c42-5b30fb86e935",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "KeywordTokenizer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T16:09:25.867Z",
+    "modified": "2022-08-12T16:10:25.039Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": \"keyword\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6bb3dee3-01ce-410c-8d2f-00e421b46102",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "Pattern",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-12T16:10:37.465Z",
+    "modified": "2022-08-12T16:11:07.770Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": \"pattern\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "7617cc5b-3b54-4de4-9886-1fccc4302721",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "Pattern Custom",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-12T16:11:12.059Z",
+    "modified": "2022-08-12T16:12:38.890Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": {\"type\": \"pattern\", \"pattern\": \"\\\\d+\"}\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "1ca6a949-3e7d-4c02-b4c3-fd4199becbee",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "Char Group",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-08-12T16:13:05.314Z",
+    "modified": "2022-08-12T16:15:22.605Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": {\"type\": \"char_group\", \"tokenize_on_chars\": [\"digit\"]}\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2666c1bf-ce10-417e-a126-2863416c7321",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "SimplePattern Custom",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-12T16:15:42.300Z",
+    "modified": "2022-08-12T16:16:41.877Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": {\"type\": \"simple_pattern\", \"pattern\": \"[a-zA-z]*\"}\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bbf0c12f-2535-4294-b0a6-0eb18e290101",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "SimplePatternSplit",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-08-12T16:16:57.610Z",
+    "modified": "2022-08-12T16:19:28.346Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch 7.0\",\n  \"tokenizer\": {\"type\": \"simple_pattern_split\", \"pattern\": \"[a-zA-Z.]*\"}\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "584ea64b-2ef4-47ed-9071-80708e131f4f",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "7e4e6907-d520-457b-bf65-4a906857e82c",
+    "name": "PathHierarchy",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2022-08-12T16:32:07.638Z",
+    "modified": "2022-08-12T16:32:47.433Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"/usr/local\",\n  \"tokenizer\": {\"type\": \"path_hierarchy\", \"replacement\": \"*\"}\n}\n",
       "form": []
     },
     "tests": []
