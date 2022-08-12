@@ -1492,5 +1492,62 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "0ba20512-853a-4fe3-9604-97acb66a01d4",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "e56e0ae9-6ef9-4c46-bf91-6245a7283225",
+    "name": "HtmlStrip",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T12:45:29.320Z",
+    "modified": "2022-08-12T12:48:10.516Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"<body>You'll love Elasticsearch 7.0</body>\",\n\t\"tokenizer\": \"standard\",\n\t\"filter\": [\"lowercase\"],\n\t\"char_filter\": [\"html_strip\"]\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a5f0ca8f-46bd-4690-a66c-612ba1883da3",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "e56e0ae9-6ef9-4c46-bf91-6245a7283225",
+    "name": "HtmlStrip and Map",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-12T12:55:29.811Z",
+    "modified": "2022-08-12T12:55:43.931Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"text\": \"<body>You'll love Elasticsearch 7.0</body>\",\n\t\"tokenizer\": \"standard\",\n\t\"filter\": [\"lowercase\"],\n\t\"char_filter\": [\"html_strip\", {\"type\": \"mapping\", \"mappings\": [\"You'll => You will\"]}]\n\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a4f276ef-7825-4c92-bf4e-af2ea41a4c8e",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "e56e0ae9-6ef9-4c46-bf91-6245a7283225",
+    "name": "HtmlStrip - Map - Pattern",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-12T12:59:47.475Z",
+    "modified": "2022-08-12T13:00:15.840Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"<body>You'll love Elasticsearch 7.0</body>\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    \"lowercase\"\n  ],\n  \"char_filter\": [\n    \"html_strip\",\n    {\n      \"type\": \"mapping\",\n      \"mappings\": [\n        \"You'll => You will\"\n      ]\n    },\n    {\n      \"type\": \"pattern_replace\",\n      \"pattern\": \"(\\\\d+).(\\\\d+)\",\n      \"replacement\": \"v$1\"\n    }\n  ]\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

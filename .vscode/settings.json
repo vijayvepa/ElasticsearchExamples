@@ -1,6 +1,7 @@
 {
   "json.schemas": [
-    { "fileMatch": ["*.es.json"], "url": "./mappings/schema.json" }
+    { "fileMatch": ["*.es.json"], "url": "./mappings/schema.json" },
+    { "fileMatch": ["*.esa.json"], "url": "./analyzers/schema.json" }
   ],
   "yaml.schemas": { "./mappings/schema.json": ["*.es.yaml"] }
 }

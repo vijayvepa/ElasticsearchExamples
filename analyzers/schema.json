@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "The input text"
+    },
+    "analyzer": {
+      "type": "string",
+      "$ref": "#/definitions/esanalyze"
+    },
+
+    "tokenizer": {
+      "description": "Split the Output of Character Filters into Unique Terms",
+      "type": "string",
+      "$ref": "#/definitions/estokenizer"
+    },
+    "filter": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "$ref": "#/definitions/esfilter"
+      }
+    },
+    "char_filter": {
+      "type": "array",
+      "description": "Convert original input text into a stream of characters then preprocess it before passing it as an input to tokenizer",
+      "items": {
+        "anyOf": [
+          { "$ref": "#/definitions/escharfilter" },
+          { "$ref": "#/definitions/escharfiltermap" },
+          { "$ref": "#/definitions/escharfilterpattern" }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "esanalyze": {
+      "type": "string",
+      "default": "standard",
+      "enum": [
+        "standard",
+        "simple",
+        "whitespace",
+        "stop",
+        "keyword",
+        "pattern",
+        "arabic",
+        "armenian",
+        "basque",
+        "bengali",
+        "brazilian",
+        "bulgarian",
+        "catalan",
+        "cjk",
+        "czech",
+        "danish",
+        "dutch",
+        "english",
+        "estonian",
+        "finnish",
+        "french",
+        "galician",
+        "german",
+        "greek",
+        "hindi",
+        "hungarian",
+        "indonesian",
+        "irish",
+        "italian",
+        "latvian",
+        "lithuanian",
+        "norwegian",
+        "persian",
+        "portuguese",
+        "romanian",
+        "russian",
+        "sorani",
+        "spanish",
+        "swedish",
+        "turkish",
+        "thai",
+        "kuromoji",
+        "smartcn",
+        "openkoreantext-analyzer"
+      ]
+    },
+    "estokenizer": {
+      "type": "string",
+      "default": "standard",
+      "enum": ["standard"]
+    },
+    "esfilter": {
+      "type": "string",
+      "default": "lowercase",
+      "enum": ["lowercase"]
+    },
+    "escharfilter": {
+      "type": "string",
+
+      "enum": ["html_strip", "pattern_replace"]
+    },
+    "escharfiltermap": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["mapping"]
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "escharfilterpattern": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["pattern_replace"]
+        },
+        "pattern": {
+          "description": "Regular expression for finding token",
+          "type": "string"
+        },
+        "replacement": {
+          "description": "Regular expression for replacing token",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
