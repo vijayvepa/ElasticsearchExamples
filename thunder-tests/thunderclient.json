@@ -2005,5 +2005,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "83b2fba7-1c99-40b2-a519-5c3f38ca5024",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "Stop",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2022-08-15T17:25:57.646Z",
+    "modified": "2022-08-15T17:51:07.024Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"A an The and Elasticsearch\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [{\"type\": \"stop\", \"stopwords\": [\"_english_\"], \"ignore_case\": true}]\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]

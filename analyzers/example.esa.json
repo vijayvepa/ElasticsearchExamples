@@ -1,5 +1,5 @@
 {
-  "text": "You'll love Elasticsearch 7.0",
+  "text": "A an The and Elasticsearch",
   "tokenizer": "standard",
-  "filter": [{"type": "stemmer", "name": "english"}]
+  "filter": [{"type": "stop", "stopwords": ["_english_"], "ignore_case": true}]
 }
