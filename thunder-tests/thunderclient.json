@@ -2043,5 +2043,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "186b9f97-0864-4d93-9424-56c8ca7d9408",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "Conditional",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 110000,
+    "created": "2022-08-15T18:44:08.959Z",
+    "modified": "2022-08-15T18:46:34.290Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"You'll love Elasticsearch 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"condition\",\n      \"script\": { \"source\": \"token.getType()=='<NUM>'\" },\n      \"filter\": [\"fingerprint\"]\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]

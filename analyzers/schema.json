@@ -42,7 +42,8 @@
           { "$ref": "#/definitions/estokenfilter_keep" },
           { "$ref": "#/definitions/estokenfilter_keeptypes" },
           { "$ref": "#/definitions/estokenfilter_stemmer" },
-          { "$ref": "#/definitions/estokenfilter_stop" }
+          { "$ref": "#/definitions/estokenfilter_stop" },
+		  { "$ref": "#/definitions/estokenfilter_conditional" }
         ]
       }
     }
@@ -259,7 +260,7 @@
     "estokenfilter": {
       "type": "string",
       "default": "lowercase",
-      "enum": ["lowercase", "uppercase", "fingerprint", "unique"]
+      "enum": ["lowercase", "uppercase", "fingerprint", "unique", "reverse"]
     },
     "estokenfilter_asciifolding": {
       "type": "object",
@@ -392,6 +393,24 @@
         }
       }
     },
+    "estokenfilter_conditional": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["condition"]
+        },
+        "script": {
+          "description": "Allows to specify a predicate script",
+           "$ref": "#/definitions/esscript" 
+        },
+        "filter": {
+          "type": "array",
+          "description": "list of token filters applied to the terms if terms match",
+		  "items": {"$ref": "#/definitions/estokenfilter"}
+        }
+      }
+    },
     "eslanguage": {
       "type": "string",
       "enum": [
@@ -494,6 +513,15 @@
         "_turkish_",
         "_thai_"
       ]
+    },
+    "esscript": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "examples": ["token.getType()=='<ALPHANUM>'"]
+        }
+      }
     }
   }
 }

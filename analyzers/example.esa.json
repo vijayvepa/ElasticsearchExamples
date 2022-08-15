@@ -1,5 +1,11 @@
 {
-  "text": "love loves Loved loving",
+  "text": "You'll lover Elasticsearch 7.0",
   "tokenizer": "standard",
-  "filter": [{"type": "stemmer", "name": "english"}, "unique", "lowercase"]
+  "filter": [
+    {
+      "type": "condition",
+      "script": { "source": "token.getType()=='<ALPHANUM>'" },
+      "filter": ["uppercase"]
+    }
+  ]
 }
