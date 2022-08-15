@@ -2024,5 +2024,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "016d98b3-d341-48af-b739-45984780922a",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "Unique",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 100000,
+    "created": "2022-08-15T17:52:58.276Z",
+    "modified": "2022-08-15T17:53:27.558Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"love loves Loved loving\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [{\"type\": \"stemmer\", \"name\": \"english\"}, \"lowercase\", \"unique\"]\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

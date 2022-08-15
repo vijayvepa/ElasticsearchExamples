@@ -259,7 +259,7 @@
     "estokenfilter": {
       "type": "string",
       "default": "lowercase",
-      "enum": ["lowercase", "uppercase", "fingerprint"]
+      "enum": ["lowercase", "uppercase", "fingerprint", "unique"]
     },
     "estokenfilter_asciifolding": {
       "type": "object",
