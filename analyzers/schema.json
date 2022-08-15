@@ -27,20 +27,22 @@
         { "$ref": "#/definitions/estokenizer" },
         { "$ref": "#/definitions/esngram" },
         { "$ref": "#/definitions/estokenizerstructpattern" },
-		{"$ref": "#/definitions/estokenizerchargroup"},
-		{"$ref": "#/definitions/estokenizerpathhierarchy"}
+        { "$ref": "#/definitions/estokenizerchargroup" },
+        { "$ref": "#/definitions/estokenizerpathhierarchy" }
       ]
     },
     "filter": {
       "type": "array",
       "items": {
-		"anyOf": [
-			{ "$ref": "#/definitions/estokenfilter" },
-			{ "$ref": "#/definitions/estokenfilter_asciifolding" },
-			{ "$ref": "#/definitions/esngram" },
-			{"$ref": "#/definitions/estokenfilter_fingerprint"},
-			{ "$ref": "#/definitions/estokenfilter_keep" }
-		]        
+        "anyOf": [
+          { "$ref": "#/definitions/estokenfilter" },
+          { "$ref": "#/definitions/estokenfilter_asciifolding" },
+          { "$ref": "#/definitions/esngram" },
+          { "$ref": "#/definitions/estokenfilter_fingerprint" },
+          { "$ref": "#/definitions/estokenfilter_keep" },
+          { "$ref": "#/definitions/estokenfilter_keeptypes" },
+          { "$ref": "#/definitions/estokenfilter_stemmer" }
+        ]
       }
     }
   },
@@ -331,21 +333,97 @@
           "type": "array",
           "items": {
             "type": "string",
-			"enum": ["<NUM>", "<ALPHANUM>", "<ALPHA>"]
+            "enum": ["<NUM>", "<ALPHANUM>", "<HANGUL>", "word", "<SYNONYM>"]
           }
         },
         "mode": {
           "type": "string",
-          "description": "the keep_words_path parameter allows you to specify a list of words in the file path; ",
-		  "default": "exclude",
+          "description": "allows you to include or exclude the specified terms",
+          "default": "include",
           "enum": ["include", "exclude"]
-        },
-        "keep_words_case": {
-          "type": "boolean",
-          "default": false,
-          "description": "the keep_words_case parameter (this defaults to false) converts the terms to lowercase. "
         }
       }
+    },
+    "estokenfilter_stemmer": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["stemmer"]
+        },
+        "name": {
+          "description": "Allows to specify stemmer in different languages and apply it to the terms ",
+          "$ref": "#/definitions/eslanguage"
+        },
+        "mode": {
+          "type": "string",
+          "description": "allows you to include or exclude the specified terms",
+          "default": "include",
+          "enum": ["include", "exclude"]
+        }
+      }
+    },
+    "eslanguage": {
+      "type": "string",
+      "enum": [
+        "arabic",
+        "armenian",
+        "basque",
+        "bengali",
+        "brazilian",
+        "bulgarian",
+        "catalan",
+        "czech",
+        "danish",
+        "dutch",
+        "dutch_kp",
+        "english",
+        "light_english",
+        "lovins",
+        "minimal_english",
+        "porter2",
+        "possessive_english",
+        "estonian",
+        "finnish",
+        "light_finnish",
+        "french",
+        "light_french",
+        "minimal_french",
+        "galician",
+        "minimal_galician",
+        "german",
+        "german2",
+        "minimal_german",
+        "light_german",
+        "greek",
+        "hindi",
+        "hungarian",
+        "light_hungarian",
+        "indonesian",
+        "irish",
+        "italian",
+        "light_italian",
+        "latvian",
+        "lithuanian",
+        "norwegian",
+        "light_norwegian",
+        "minimal_norwegian",
+        "light_nynorsk",
+        "minimal_nynorsk",
+        "portuguese",
+        "light_portuguese",
+        "minimal_portuguese",
+        "portuguese_rslp",
+        "romanian",
+        "russian",
+        "light_russian",
+        "sorani",
+        "spanish",
+        "light_spanish",
+        "swedish",
+        "light_swedish",
+        "turkish"
+      ]
     }
   }
 }

@@ -1977,12 +1977,31 @@
     "method": "POST",
     "sortNum": 70000,
     "created": "2022-08-12T18:38:13.947Z",
-    "modified": "2022-08-12T18:38:13.947Z",
+    "modified": "2022-08-15T17:12:07.648Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"text\": \"You'll love Elasticsearch 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [{\"type\": \"fingerprint\", \"separator\": \";\" , \"max_output_size\": 255 }]\n}\n",
+      "raw": "{\n  \"text\": \"You'll love Elasticsearch 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [{\"type\": \"keep_types\", \"types\": [\"<NUM>\"]}]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f4b1f050-ba35-4b99-831b-3aa783c4ad73",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "Stemmer",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2022-08-15T17:13:01.552Z",
+    "modified": "2022-08-15T17:25:03.127Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"love loves loved loving\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [{\"type\": \"stemmer\", \"name\": \"english\"}]\n}",
       "form": []
     },
     "tests": []
