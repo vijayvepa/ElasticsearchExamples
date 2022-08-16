@@ -457,6 +457,11 @@
           "type": "boolean",
           "description": "Concatenates the split numeric and word terms, which come from the same origin term, together",
           "default": false
+        },
+        "split_on_case_change": {
+          "type": "boolean",
+          "description": "The case changes are ignored when it is false",
+          "default": true
         }
       }
     },
