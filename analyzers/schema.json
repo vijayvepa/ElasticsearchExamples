@@ -445,7 +445,12 @@
         },
         "catenate_words": {
           "type": "boolean",
-          "description": "Concatenates split word terms, which come from the same origin term, together",
+          "description": "Concatenates the split word terms, which come from the same origin term, together",
+          "default": false
+        },
+        "catenate_numbers": {
+          "type": "boolean",
+          "description": "Concatenates the split numeric terms, which come from the same origin term, together",
           "default": false
         }
       }

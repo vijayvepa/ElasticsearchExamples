@@ -4,7 +4,7 @@
   "filter": [
     {
       "type": "word_delimiter",
-      "catenate_words": true
+      "catenate_numbers": true
     }
   ]
 }

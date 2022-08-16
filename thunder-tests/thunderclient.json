@@ -2195,5 +2195,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "d1fc76a9-25d7-4800-b5cf-0f1165aa8cad",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "CatenateNumbers",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-08-16T13:55:43.656Z",
+    "modified": "2022-08-16T13:55:58.706Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elastic_Search 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n      \"catenate_numbers\": true\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3e0a3ccf-0469-4456-a83c-0963b77f352c",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "CatenateNumbers false",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2022-08-16T13:56:14.085Z",
+    "modified": "2022-08-16T13:56:36.075Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elastic_Search 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n      \"catenate_numbers\": false\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]
