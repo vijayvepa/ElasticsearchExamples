@@ -437,6 +437,11 @@
           "type": "boolean",
           "description": "Generates subwords from a term when the case changes",
           "default": true
+        },
+        "generate_number_parts": {
+          "type": "boolean",
+          "description": "Generates a subnumber",
+          "default": true
         }
       }
     },
