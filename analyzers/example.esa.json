@@ -3,9 +3,8 @@
   "tokenizer": "standard",
   "filter": [
     {
-      "type": "condition",
-      "script": { "source": "token.getType()=='<ALPHANUM>'" },
-      "filter": ["uppercase"]
+      "type": "predicate_token_filter",
+      "script": { "source": "token.getType()=='<NUM>'" }
     }
   ]
 }
