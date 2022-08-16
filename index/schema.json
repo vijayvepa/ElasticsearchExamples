@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "mappings": {
+      "$ref": "../mappings/schema.json#"
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "analyzer": {
+              "$ref": "#/definitions/esanalyze_custom"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "esanalyze_custom": {
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["custom"]
+            },
+            "tokenizer": {
+              "anyOf": [
+                { "$ref": "../analyzers/schema.json#/definitions/estokenizer" },
+                { "type": "string" }
+              ]
+            },
+            "filter": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_asciifolding"
+                  },
+                  { "$ref": "../analyzers/schema.json#/definitions/esngram" },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_fingerprint"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keep"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keeptypes"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stemmer"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stop"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_conditional"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_predicate"
+                  },
+                  {
+                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_worddelimiter"
+                  },
+                  { "type": "string" }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

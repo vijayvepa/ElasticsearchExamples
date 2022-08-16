@@ -2537,5 +2537,19 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "47a49494-6897-4fa7-bcbd-a53b89beb21c",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0a0dec71-190c-4ecc-ba2d-425e40fa6b11",
+    "name": "Standard Copy",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_mappings",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-16T16:12:02.480Z",
+    "modified": "2022-08-16T16:12:25.099Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

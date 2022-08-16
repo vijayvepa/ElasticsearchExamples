@@ -1,0 +1,38 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "properties": {
+      "symbol": { "type": "keyword" },
+      "fund_name": { "type": "text" },
+      "rating": { "type": "byte" },
+      "morningstar_category": { "type": "keyword" },
+      "category": { "type": "keyword" },
+      "family": { "type": "keyword" },
+      "market_cap": { "type": "keyword" },
+      "description": {
+        "type": "text",
+        "fields": { "raw": { "type": "keyword" } },
+        "analyzer": "description_analyzer",
+        "search_analyzer": "description_analyzer"
+      }
+    }
+  },
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "description_analyzer": {
+          "type": "custom",
+          "tokenizer": "description_tokenizer",
+          "filter": [
+            "lowercase",
+            "description_pattern_replace_filter",
+            "description_stemmer_filter",
+            "description_stop_filter",
+            "description_length_filter",
+            "unique"
+          ]
+        }
+      }
+    }
+  }
+}
