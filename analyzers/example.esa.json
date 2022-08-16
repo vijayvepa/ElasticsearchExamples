@@ -1,10 +1,10 @@
 {
-  "text": "Elastic_Search 7.0",
+  "text": "SN12X",
   "tokenizer": "standard",
   "filter": [
     {
       "type": "word_delimiter",
-	  "preserve_original": true
+	  "split_on_numerics": true
     }
   ]
 }

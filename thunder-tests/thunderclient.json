@@ -2347,5 +2347,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "84d9ead0-7fc2-4a7c-89fb-2f13147535e5",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "SplitOnNumerics",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 140000,
+    "created": "2022-08-16T14:20:32.003Z",
+    "modified": "2022-08-16T14:22:32.465Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"SN12X\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n\t  \"split_on_numerics\": true\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "0357c942-90e6-493b-8e5d-e57487f92f8e",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "SplitOnNumerics false",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 150000,
+    "created": "2022-08-16T14:26:13.278Z",
+    "modified": "2022-08-16T14:26:29.880Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"SN12X\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n\t  \"split_on_numerics\": false\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]
