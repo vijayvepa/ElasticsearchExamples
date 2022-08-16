@@ -49,6 +49,13 @@
 			- [1.4.13.7. preserve_original](#14137-preserve_original)
 			- [1.4.13.8. split_on_numerics](#14138-split_on_numerics)
 			- [1.4.13.9. stem_english_possessive](#14139-stem_english_possessive)
+	- [1.5. Built-In analyzers](#15-built-in-analyzers)
+		- [1.5.1. standard](#151-standard)
+		- [1.5.2. simple](#152-simple)
+		- [1.5.3. whitespace](#153-whitespace)
+		- [1.5.4. stop](#154-stop)
+		- [1.5.5. keyword](#155-keyword)
+		- [1.5.6. pattern](#156-pattern)
 
 <!-- /TOC -->
 
@@ -494,3 +501,56 @@ This removes the apostrophe from the possessive adjective.
 	- `["ElasticSearch", "s", "analyzer"]`
 
 Another two parameters, `protected_words` and `type_table`, also have special usage; you can find out more about them at https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-word-delimiter-tokenfilter.html.
+
+## 1.5. Built-In analyzers
+
+### 1.5.1. standard
+```yaml
+tokenizer:	standard	
+token-filter: [lowercase , stop] 
+```
+- `"In Elasticsearch 7.0"` =>
+- `["in", "elasticsearch", "7.0"]`
+
+### 1.5.2. simple
+```yaml
+tokenizer: lowercase
+```
+- `"In Elasticsearch 7.0"` =>
+- `["in", "elasticsearch"]`
+
+### 1.5.3. whitespace
+```yaml
+tokenizer: whitespace
+```		
+- `"In Elasticsearch 7.0"` =>
+- `["In", "Elasticsearch", "7.0"]`
+
+### 1.5.4. stop
+```yaml
+tokenizer: lowercase
+token-filter: stop
+```
+- `"In Elasticsearch 7.0"` =>
+- `["elasticsearch"]`
+	
+### 1.5.5. keyword
+```yaml
+tokenizer: keyword
+```
+- `"In Elasticsearch 7.0"` =>
+- `["In Elasticsearch 7.0"]`
+
+		
+### 1.5.6. pattern
+```yaml
+tokenizer: pattern
+token-filter: [lowercase, stop]
+```
+- `"In Elasticsearch 7.0"` =>
+- `["in", "elasticsearch", "7", "0"]`
+
+## Custom Analyzers
+- Define the analyzer in index settings
+- Use it in mappings
+	

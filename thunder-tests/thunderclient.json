@@ -2066,18 +2066,18 @@
   {
     "_id": "d3444f95-4691-4cc7-8b64-d6c417c900f0",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
-    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
-    "name": "PredicateTokenFilter",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Pattern",
     "url": "http://localhost:{{dockerPort}}/_analyze",
     "method": "POST",
-    "sortNum": 120000,
+    "sortNum": 10000,
     "created": "2022-08-16T13:23:44.248Z",
-    "modified": "2022-08-16T13:24:10.329Z",
+    "modified": "2022-08-16T16:07:26.962Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"text\": \"You'll lover Elasticsearch 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"predicate_token_filter\",\n      \"script\": { \"source\": \"token.getType()=='<NUM>'\" }\n    }\n  ]\n}\n",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"pattern\"\n}",
       "form": []
     },
     "tests": []
@@ -2420,6 +2420,120 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"text\": \"Elasticsearch's analyzer\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n\t  \"stem_english_posessive\": false\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a98ff3fd-7d87-41bd-8be1-4e2bd7016948",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "9162278b-2a64-4dd2-8dc9-b3f5deb69f7a",
+    "name": "PredicateTokenFilter Copy",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 130000,
+    "created": "2022-08-16T16:06:50.961Z",
+    "modified": "2022-08-16T16:06:50.961Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"You'll lover Elasticsearch 7.0\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"predicate_token_filter\",\n      \"script\": { \"source\": \"token.getType()=='<NUM>'\" }\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "9e05877d-1a2f-4738-9dbd-71dbee70401d",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Keyword",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-16T16:07:33.283Z",
+    "modified": "2022-08-16T16:07:55.017Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"keyword\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6c543889-fb74-41a0-a40a-a0853bb60be8",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Stop",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-16T16:07:59.361Z",
+    "modified": "2022-08-16T16:08:10.194Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"stop\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "81b096cf-582b-4ddf-b13d-8d4ed7526d74",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Whitespace",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-08-16T16:08:18.407Z",
+    "modified": "2022-08-16T16:09:24.136Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"whitespace\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "52be127e-3765-4a30-89e6-281486e7f970",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Simple",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-16T16:10:09.065Z",
+    "modified": "2022-08-16T16:10:23.249Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"simple\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f8930b67-8348-4098-9b3d-bf8d40b0790a",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "fc71b022-c130-495e-983e-5a744b01c71a",
+    "name": "Standard",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-08-16T16:10:31.742Z",
+    "modified": "2022-08-16T16:10:48.237Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"In Elasticsearch 7.0\",\n  \"analyzer\": \"standard\"\n}\n",
       "form": []
     },
     "tests": []

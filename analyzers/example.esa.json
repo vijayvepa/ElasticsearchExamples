@@ -1,10 +1,4 @@
 {
-  "text": "Elasticsearch's analyzer",
-  "tokenizer": "standard",
-  "filter": [
-    {
-      "type": "word_delimiter",
-	  "stem_english_posessive": true
-    }
-  ]
+  "text": "In Elasticsearch 7.0",
+  "analyzer": "keyword"
 }
