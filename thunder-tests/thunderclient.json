@@ -2385,5 +2385,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "31604844-57c2-4548-b1c1-3e162eb0f767",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "StemEnglishPossessive",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 160000,
+    "created": "2022-08-16T14:28:06.208Z",
+    "modified": "2022-08-16T14:28:27.768Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch's analyzer\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n\t  \"stem_english_posessive\": true\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "01c07d43-e2a7-4c44-ac71-3b9d8f609653",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "d55390d7-dc1b-4258-95ce-9414214b4bb4",
+    "name": "StemEnglishPossessive false",
+    "url": "http://localhost:{{dockerPort}}/_analyze",
+    "method": "POST",
+    "sortNum": 170000,
+    "created": "2022-08-16T14:28:32.657Z",
+    "modified": "2022-08-16T14:29:27.447Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"Elasticsearch's analyzer\",\n  \"tokenizer\": \"standard\",\n  \"filter\": [\n    {\n      \"type\": \"word_delimiter\",\n\t  \"stem_english_posessive\": false\n    }\n  ]\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]

@@ -1,10 +1,10 @@
 {
-  "text": "SN12X",
+  "text": "Elasticsearch's analyzer",
   "tokenizer": "standard",
   "filter": [
     {
       "type": "word_delimiter",
-	  "split_on_numerics": true
+	  "stem_english_posessive": true
     }
   ]
 }
