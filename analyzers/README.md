@@ -39,6 +39,16 @@
 		- [1.4.10. unique](#1410-unique)
 		- [1.4.11. conditional](#1411-conditional)
 		- [1.4.12. predicate_token_filter](#1412-predicate_token_filter)
+		- [1.4.13. word_delimiter](#1413-word_delimiter)
+			- [1.4.13.1. generate_word_parts](#14131-generate_word_parts)
+			- [1.4.13.2. generate_number_parts](#14132-generate_number_parts)
+			- [1.4.13.3. catenate_words](#14133-catenate_words)
+			- [1.4.13.4. catenate_numbers](#14134-catenate_numbers)
+			- [1.4.13.5. catenate_all](#14135-catenate_all)
+			- [1.4.13.6. split_on_case_change](#14136-split_on_case_change)
+			- [1.4.13.7. preserve_original](#14137-preserve_original)
+			- [1.4.13.8. split_on_numerics](#14138-split_on_numerics)
+			- [1.4.13.9. stem_english_possessive](#14139-stem_english_possessive)
 
 <!-- /TOC -->
 
@@ -353,6 +363,7 @@ This allows you to specify a predicate script and a list of token filters. Apply
   }
 ]
 ```
+
 - `"You'll love Elasticsearch 7.0"` =>
 - `[""ll'uoY", "evol", "hcraescitsalE", "7.0"]`
 
@@ -361,8 +372,125 @@ This allows you to specify a predicate script and a list of token filters. Apply
 This allows you to specify a predicate script. Remove the term if the term does not match. Use the `script` parameter to specify the predicate. You can refer to the Elasticsearch Java documentation for more information (https://static.javadoc.io/org.elasticsearch/elasticsearch/7.0.0-beta1/org/elasticsearch/action/admin/indices/analyze/AnalyzeResponse.AnalyzeToken.html).
 
 ```json
- [{"type": "predicate_token_filter", "script":{"source":"token.getType()=='<NUM>'"}}]
+[
+  {
+    "type": "predicate_token_filter",
+    "script": { "source": "token.getType()=='<NUM>'" }
+  }
+]
 ```
 
 - `"You'll love Elasticsearch 7.0"` =>
 - `["7.0"]`
+
+### 1.4.13. word_delimiter
+
+word_delimiter is a more complex token filter, so we will introduce it separately. Essentially, it uses all non-alphanumeric characters as separators to split the term from the output of the tokenizer. In addition to this, it has many parameters to shape the filter. Let's explore this in more detail in the following table; each example uses a `standard` tokenizer and the `word_delimiter` token filter. Note that no character filter is applied:
+
+#### 1.4.13.1. generate_word_parts
+
+This generates subwords from a term when the case changes.
+
+```json
+[{"type":"word_delimiter", "generate_word_parts": true|false}]
+```
+
+- `"ElasticSearch 7.0"` =>
+  - `["Elastic", "Search", "7", "0"]`
+  - `["7", "0"]`
+
+#### 1.4.13.2. generate_number_parts
+
+This generates a subnumber.
+
+```json
+[{"type":"word_delimiter", "generate_number_parts": true|false}]
+```
+
+- `"ElasticSearch 7.0"` =>
+  - `["Elastic", "Search", "7", "0"]`
+  - `["Elastic", "Search"]`
+
+#### 1.4.13.3. catenate_words
+
+This concatenates the split word terms, which come from the same origin term, together.
+
+```json
+[{"type":"word_delimiter", "catenate_words": true|false}]
+```
+
+- `"Elastic_Search 7.0"` =>
+  - `["Elastic", "ElasticSearch", "Search", "7", "0"]`
+  - `["Elastic", "Search", "7", "0"]`
+
+#### 1.4.13.4. catenate_numbers
+
+This concatenates the split numeric terms that come from the same origin term.
+
+```json
+[{"type":"word_delimiter", "catenate_numbers": true|false}]
+```
+
+- `"Elastic_Search 7.0"` =>
+  - `["Elastic", "Search", "7", "70", "0"]`
+  - `["Elastic", "Search", "7", "0"]`
+
+#### 1.4.13.5. catenate_all
+
+This concatenates the split word terms or numeric terms that come from the same origin term.
+
+```json
+[{"type":"word_delimiter", "catenate_all": true|false}]
+```
+
+- `"Elastic_Search 7.0"` =>
+  - `["Elastic", "ElasticSearch", "Search", "7", "70", "0"]`
+  - `["Elastic", "Search", "7", "0"]`
+
+#### 1.4.13.6. split_on_case_change
+
+The case changes are ignored when it is false.
+
+```json
+[{"type":"word_delimiter", "split_on_case_change": true|false}]
+```
+
+- `"ElasticSearch 7.0"` =>
+  - `["Elastic", "Search", "7", "0"]`
+  - `["ElasticSearch", "7", "0"]`
+
+#### 1.4.13.7. preserve_original
+
+The original terms from the tokenizer are preserved.
+
+```json
+[{"type":"word_delimiter", "preserve_original": true|false}]
+```
+
+- `"Elastic_Search 7.0"` =>
+  - `["Elastic_Search","Elastic", "Search", "7.0", "7", "0"]`
+  - `["Elastic", "Search", "7", "0"]`
+
+#### 1.4.13.8. split_on_numerics
+
+The numeric changes are ignored when it is false.
+
+```json
+[{"type":"word_delimiter", "split_on_numerics":true|false}]
+```
+
+- `"SN12X"` =>
+  - `["SN", "12", "x"]`
+  - `["SN12x"]`
+
+#### 1.4.13.9. stem_english_possessive
+This removes the apostrophe from the possessive adjective.
+```json
+[{"type":"word_delimiter", "stem_english_possessive":true|false}]
+```
+
+- `"Elasticsearch's analyzer"` =>
+	- `["ElasticSearch", "analyzer"]`
+	- `["ElasticSearch", "s", "analyzer"]`
+
+Another two parameters, `protected_words` and `type_table`, also have special usage; you can find out more about them at https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-word-delimiter-tokenfilter.html.

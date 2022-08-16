@@ -1,10 +1,10 @@
 {
-  "text": "You'll lover Elasticsearch 7.0",
+  "text": "You'll love Elasticsearch 7.0",
   "tokenizer": "standard",
   "filter": [
     {
-      "type": "predicate_token_filter",
-      "script": { "source": "token.getType()=='<NUM>'" }
+      "type": "word_delimiter",
+      "generate_word_parts": true
     }
   ]
 }

@@ -43,8 +43,9 @@
           { "$ref": "#/definitions/estokenfilter_keeptypes" },
           { "$ref": "#/definitions/estokenfilter_stemmer" },
           { "$ref": "#/definitions/estokenfilter_stop" },
-		  { "$ref": "#/definitions/estokenfilter_conditional" },
-		  { "$ref": "#/definitions/estokenfilter_predicate"}
+          { "$ref": "#/definitions/estokenfilter_conditional" },
+          { "$ref": "#/definitions/estokenfilter_predicate" },
+          { "$ref": "#/definitions/estokenfilter_worddelimiter" }
         ]
       }
     }
@@ -422,6 +423,20 @@
         "script": {
           "description": "Allows to specify a predicate script",
           "$ref": "#/definitions/esscript"
+        }
+      }
+    },
+    "estokenfilter_worddelimiter": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["word_delimiter"]
+        },
+        "generate_word_parts": {
+          "type": "boolean",
+          "description": "Generates subwords from a term when the case changes",
+          "default": true
         }
       }
     },
