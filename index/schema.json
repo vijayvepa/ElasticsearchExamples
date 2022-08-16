@@ -14,32 +14,85 @@
             "analyzer": {
               "$ref": "#/definitions/esanalyze_custom"
             },
-			"tokenizer": {
-				"$ref": "#/definitions/estokenizer_custom"
-			}
+            "tokenizer": {
+              "$ref": "#/definitions/estokenizer_custom"
+            },
+            "filter": {
+              "$ref": "#/definitions/filter_custom"
+            }
           }
         }
       }
     }
   },
   "definitions": {
+    "filter_custom": {
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "#/definitions/filter_anyOf"
+        }
+      }
+    },
     "estokenizer_custom": {
       "patternProperties": {
         "^.*$": {
-			"$ref": "#/definitions/tokenizer_anyOf"
-		}
+          "$ref": "#/definitions/tokenizer_anyOf"
+        }
       }
     },
-	"tokenizer_anyOf":  {
-              "anyOf": [
-                { "$ref": "../analyzers/schema.json#/definitions/estokenizer" },
-                { "$ref": "../analyzers/schema.json#/definitions/esngram" },
-                { "$ref": "../analyzers/schema.json#/definitions/estokenizerstructpattern" },
-                { "$ref": "../analyzers/schema.json#/definitions/estokenizerchargroup" },
-                { "$ref": "../analyzers/schema.json#/definitions/estokenizerpathhierarchy" },
-				{"type": "string"}
-              ]
-            },
+    "tokenizer_anyOf": {
+      "anyOf": [
+        { "$ref": "../analyzers/schema.json#/definitions/estokenizer" },
+        { "$ref": "../analyzers/schema.json#/definitions/esngram" },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenizerstructpattern"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenizerchargroup"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenizerpathhierarchy"
+        },
+        { "type": "string" }
+      ]
+    },
+    "tokenfilter_anyOf": {
+      "anyOf": [
+        { "$ref": "../analyzers/schema.json#/definitions/estokenfilter" },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_asciifolding"
+        },
+        { "$ref": "../analyzers/schema.json#/definitions/esngram" },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_fingerprint"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keep"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keeptypes"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stemmer"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stop"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_conditional"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_predicate"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_length"
+        },
+        {
+          "$ref": "../analyzers/schema.json#/definitions/estokenfilter_worddelimiter"
+        },
+        { "type": "string" }
+      ]
+    },
     "esanalyze_custom": {
       "patternProperties": {
         "^.*$": {
@@ -54,46 +107,22 @@
             },
             "filter": {
               "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_asciifolding"
-                  },
-                  { "$ref": "../analyzers/schema.json#/definitions/esngram" },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_fingerprint"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keep"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_keeptypes"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stemmer"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_stop"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_conditional"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_predicate"
-                  },
-                  {
-                    "$ref": "../analyzers/schema.json#/definitions/estokenfilter_worddelimiter"
-                  },
-                  { "type": "string" }
-                ]
-              }
+              "items": { "$ref": "#/definitions/tokenfilter_anyOf" }
             }
           }
         }
       }
+    },
+    "charfilter_anyOf": {
+      "anyOf": [
+        { "$ref": "../analyzers/schema.json#/definitions/escharfilter" },
+        { "$ref": "../analyzers/schema.json#/definitions/escharfiltermap" },
+        { "$ref": "../analyzers/schema.json#/definitions/escharfilterpattern" }
+      ]
+    },
+    "filter_anyOf": {
+      "anyOf": [{ "$ref": "#/definitions/tokenfilter_anyOf" },
+	{"$ref": "#/definitions/charfilter_anyOf"}]
     }
   }
 }

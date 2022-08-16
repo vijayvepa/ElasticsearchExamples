@@ -45,6 +45,7 @@
           { "$ref": "#/definitions/estokenfilter_stop" },
           { "$ref": "#/definitions/estokenfilter_conditional" },
           { "$ref": "#/definitions/estokenfilter_predicate" },
+          { "$ref": "#/definitions/estokenfilter_length" },
           { "$ref": "#/definitions/estokenfilter_worddelimiter" }
         ]
       }
@@ -175,8 +176,10 @@
           "description": "This slides along the input character stream to provide items in the specified length of the specified characters. token_chars is used to specify the letters, digits, whitespace, punctuation, and symbol.",
           "type": "array",
           "items": {
-			  "anyOf": [{ "$ref": "#/definitions/estokentype" }, {"type":"string"}]
-            
+            "anyOf": [
+              { "$ref": "#/definitions/estokentype" },
+              { "type": "string" }
+            ]
           }
         }
       }
@@ -427,6 +430,23 @@
         "script": {
           "description": "Allows to specify a predicate script",
           "$ref": "#/definitions/esscript"
+        }
+      }
+    },
+    "estokenfilter_length": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["length"]
+        },
+        "min": {
+          "description": "Removes tokens longer than specified length",
+          "type": "integer"
+        },
+        "max": {
+          "description": "Removes tokens shorter than specified length",
+          "type": "integer"
         }
       }
     },

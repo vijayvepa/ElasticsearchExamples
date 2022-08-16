@@ -38,8 +38,13 @@
 			  "type": "char_group",
 			  "tokenize_on_chars": ["whitespace", "digit", "symbol", "\\n", ",", ":", "!", "?",";", ",","_", "{", "[", "}", "]", "(", ")", "\\", "\/", "\"" ]
 		  }
+	  },
+	  "filter":{
+			"description_pattern_replace_filter": {"type": "pattern_replace", "pattern": "(\\w{2,})\\.", "replacement": "$1" },
+			"description_stemmer_filter":{"type": "stemmer", "name": "light_english"},
+			"description_stop_filter": {"type": "stop", "stopwords": ["_english_"]},
+			"description_length_filter":{"type": "length", "min": 2}
 	  }
-	  
     }
   }
 }
