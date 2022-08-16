@@ -32,7 +32,14 @@
             "unique"
           ]
         }
-      }
+      },
+	  "tokenizer": {
+		  "description_tokenizer": {
+			  "type": "char_group",
+			  "tokenize_on_chars": ["whitespace", "digit", "symbol", "\\n", ",", ":", "!", "?",";", ",","_", "{", "[", "}", "]", "(", ")", "\\", "\/", "\"" ]
+		  }
+	  }
+	  
     }
   }
 }

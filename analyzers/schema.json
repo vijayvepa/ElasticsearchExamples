@@ -175,7 +175,8 @@
           "description": "This slides along the input character stream to provide items in the specified length of the specified characters. token_chars is used to specify the letters, digits, whitespace, punctuation, and symbol.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/estokentype"
+			  "anyOf": [{ "$ref": "#/definitions/estokentype" }, {"type":"string"}]
+            
           }
         }
       }
@@ -217,7 +218,10 @@
           "description": "You can define a set of separators to split the input character stream into terms. Use tokenize_on_chars to specify a list of separators.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/estokentype"
+            "anyOf": [
+              { "$ref": "#/definitions/estokentype" },
+              { "type": "string" }
+            ]
           }
         },
         "flag": {

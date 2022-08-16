@@ -13,13 +13,33 @@
           "properties": {
             "analyzer": {
               "$ref": "#/definitions/esanalyze_custom"
-            }
+            },
+			"tokenizer": {
+				"$ref": "#/definitions/estokenizer_custom"
+			}
           }
         }
       }
     }
   },
   "definitions": {
+    "estokenizer_custom": {
+      "patternProperties": {
+        "^.*$": {
+			"$ref": "#/definitions/tokenizer_anyOf"
+		}
+      }
+    },
+	"tokenizer_anyOf":  {
+              "anyOf": [
+                { "$ref": "../analyzers/schema.json#/definitions/estokenizer" },
+                { "$ref": "../analyzers/schema.json#/definitions/esngram" },
+                { "$ref": "../analyzers/schema.json#/definitions/estokenizerstructpattern" },
+                { "$ref": "../analyzers/schema.json#/definitions/estokenizerchargroup" },
+                { "$ref": "../analyzers/schema.json#/definitions/estokenizerpathhierarchy" },
+				{"type": "string"}
+              ]
+            },
     "esanalyze_custom": {
       "patternProperties": {
         "^.*$": {
@@ -30,10 +50,7 @@
               "enum": ["custom"]
             },
             "tokenizer": {
-              "anyOf": [
-                { "$ref": "../analyzers/schema.json#/definitions/estokenizer" },
-                { "type": "string" }
-              ]
+              "$ref": "#/definitions/tokenizer_anyOf"
             },
             "filter": {
               "type": "array",
