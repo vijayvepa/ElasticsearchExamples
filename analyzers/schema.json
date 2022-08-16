@@ -442,6 +442,11 @@
           "type": "boolean",
           "description": "Generates a subnumber",
           "default": true
+        },
+        "catenate_words": {
+          "type": "boolean",
+          "description": "Concatenates split word terms, which come from the same origin term, together",
+          "default": false
         }
       }
     },
