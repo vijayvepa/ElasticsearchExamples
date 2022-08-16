@@ -462,6 +462,21 @@
           "type": "boolean",
           "description": "The case changes are ignored when it is false",
           "default": true
+        },
+        "preserve_original": {
+          "type": "boolean",
+          "description": "The original terms from the tokenizer are preserved",
+          "default": true
+        },
+        "split_on_numerics": {
+          "type": "boolean",
+          "description": "The numeric changes are ignored when false",
+          "default": true
+        },
+        "stem_english_posessive": {
+          "type": "boolean",
+          "description": "Removes the apostrophe from the possessive adjective.",
+          "default": true
         }
       }
     },
