@@ -9,6 +9,16 @@
 		- [1.2.2. size](#122-size)
 		- [1.2.3. sort](#123-sort)
 		- [1.2.4. _source](#124-_source)
+		- [1.2.5. q](#125-q)
+		- [1.2.6. default_operator](#126-default_operator)
+		- [1.2.7. explain](#127-explain)
+		- [1.2.8. analyzer](#128-analyzer)
+		- [1.2.9. stored_fields](#129-stored_fields)
+		- [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
+		- [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
+		- [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
+		- [1.2.13. df](#1213-df)
+		- [1.2.14. lenient](#1214-lenient)
 
 <!-- /TOC -->
 
@@ -89,37 +99,44 @@ Search analyzer to be used to analyze input query string.
 
 default: standard
 
-### stored_fields
+### 1.2.9. stored_fields
 Retrieves those params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying `_none_`
 
 ```
 ?stored_fields=_none_
 ```
 
-### analyze_wildcard
+### 1.2.10. analyze_wildcard
 determines whether to analyze wildcard or prefix queries. default:false
 
 ```
 ?analyze_wildcard=false
 ```
 
-### allow_partial_search_results
+### 1.2.11. allow_partial_search_results
 return partial results in the event of failure. default:true
 
 ```
 ?allow_partial_search_results=false
 ```
 
-### batched_reduce_size
+### 1.2.12. batched_reduce_size
 Reduces number of temporary results collected in coordinating node
 
 ```
 ?batched_reduce_size=5
 ```
 
-### df
+### 1.2.13. df
 Specified default field to search
 
 ```
 ?df=fund_name
+```
+
+### 1.2.14. lenient
+Ignore data type mismatch. default: false
+
+```
+?lenient=true
 ```

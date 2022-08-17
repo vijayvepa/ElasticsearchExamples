@@ -2905,5 +2905,30 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "f728ef3e-f581-49c2-b2c1-729181489fb0",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "Lenient",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&lenient=true",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2022-08-17T16:23:04.332Z",
+    "modified": "2022-08-17T16:23:21.926Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "lenient",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
