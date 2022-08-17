@@ -2,9 +2,10 @@
 	"query": {
 		"query_string": {
 			"query": "fund_name:ishares edge global",
-			"default_operator": "AND"
+			"default_operator": "AND",
+			"analyzer": "simple"
 		}
 	},
 	"explain": true,
-	"sort": "symbol"
+	"analyzer": "keyword"
 }

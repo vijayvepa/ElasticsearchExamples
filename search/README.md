@@ -88,8 +88,8 @@ RequestBody
 
 ```json
 {
-	"sort": {"field": "desc", "_score": "asc"},
-	"sort": "field"
+  "sort": { "field": "desc", "_score": "asc" },
+  "sort": "field"
 }
 ```
 
@@ -99,41 +99,102 @@ defaults to ascending
 
 If false, no \_source field is returned
 
+URL
+
 ```
 ?_source=false
+```
+
+RequestBody
+
+```json
+{
+	"_source": false
+}
 ```
 
 ### 1.2.5. q
 
 Follow the DSL syntax to make search query
 
+URL
 ```
 ?q=fund_name:ishares edge global
+```
+RequestBody
+
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:ishares edge global"
+		}
+	}
+}
 ```
 
 ### 1.2.6. default_operator
 
 When more than one condition is in query, specify `and|or`
-
+URL
 ```
 ?default_operator=AND
+```
+
+RequestBody
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:ishares edge global",
+			"default_operator": "AND"
+		}
+	}
+}
+
 ```
 
 ### 1.2.7. explain
 
 Provides a detailed explanation of relevance scoring
 
+URL
 ```
 explain=true
 ```
+
+RequestBody
+
+```json
+{
+	"explain": true
+}
+```
+
+
 
 ### 1.2.8. analyzer
 
 Search analyzer to be used to analyze input query string.
 
+URL
 ```
 ?analyzer=keyword
 ```
+RequestBody
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:ishares edge global",
+			"default_operator": "AND",
+			"analyzer": "keyword"
+		}
+	},
+	"explain": true
+}
+```
+
 
 default: standard
 

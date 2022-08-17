@@ -44,6 +44,10 @@
               "type": "string",
               "enum": ["AND", "OR"],
               "default": "AND"
+            },
+            "analyzer": {
+              "description": "Search analyzer to be used to analyze input query string",
+              "$ref": "../analyzers/schema.json#/definitions/esanalyze"
             }
           }
         }
