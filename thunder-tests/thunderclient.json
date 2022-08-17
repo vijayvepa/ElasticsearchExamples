@@ -3065,5 +3065,393 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "4ccb1192-37f1-4f43-9520-313f68fde512",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "Pagination",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-17T17:34:09.779Z",
+    "modified": "2022-08-17T17:42:07.927Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"from\": 2,\n\t\"size\":2,\n\t\"sort\": {\"symbol\":\"asc\"},\n\t\"_source\": false\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "5b7ec8c2-f2d9-43c1-aba9-859eabb9444e",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "QueryDSL",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-17T17:34:09.780Z",
+    "modified": "2022-08-17T17:42:57.023Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"query\": {\n\t\t\"query_string\": {\n\t\t\t\"query\": \"fund_name:ishares edge global\",\n\t\t\t\"default_operator\": \"AND\"\n\t\t}\n\t}\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f353e4a5-adae-42c0-8150-9fd60ef083ad",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "QueryDSL Explain",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&default_operator=AND&explain=true",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-17T17:34:09.781Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "default_operator",
+        "value": "AND",
+        "isPath": false
+      },
+      {
+        "name": "explain",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "cbc112ea-9fe6-4b51-b2ed-de32c361e96f",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "QueryDSL Explain Analyzer",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&default_operator=AND&explain=true&analyzer=keyword",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-08-17T17:34:09.782Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "default_operator",
+        "value": "AND",
+        "isPath": false
+      },
+      {
+        "name": "explain",
+        "value": "true",
+        "isPath": false
+      },
+      {
+        "name": "analyzer",
+        "value": "keyword",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "6f398ca3-5d66-440a-9482-7123a3a5f637",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "StoredFields",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&stored_fields=_none_",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-08-17T17:34:09.783Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "stored_fields",
+        "value": "_none_",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "97ddaed9-7b34-480f-b56f-33445b640b2b",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "AnalyzeWildcard",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&analyze_wildcard=true",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-08-17T17:34:09.784Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "analyze_wildcard",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0e1b0365-66c3-4aa2-a2bf-a57252169822",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "AllowPartialSearchResults",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&allow_partial_search_results=false",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-08-17T17:34:09.785Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "allow_partial_search_results",
+        "value": "false",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "ae540bf6-b111-47c4-ac1d-7bdeea6f2a1e",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "BatchedReduceSize",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&batched_reduce_size=5",
+    "method": "GET",
+    "sortNum": 80000,
+    "created": "2022-08-17T17:34:09.786Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "batched_reduce_size",
+        "value": "5",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "28575369-5e7b-4857-9ada-2c0654115061",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "DefaultField",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&df=fund_name",
+    "method": "GET",
+    "sortNum": 90000,
+    "created": "2022-08-17T17:34:09.787Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "df",
+        "value": "fund_name",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "f7743a67-e116-4ab3-9fd4-1ba86d4eab30",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "Lenient",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&lenient=true",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2022-08-17T17:34:09.788Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "lenient",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "2c0a8dac-4028-4e86-87e9-7e02508f83d2",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "SearchTypeDfs",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&search_type=dfs_query_then_fetch",
+    "method": "GET",
+    "sortNum": 110000,
+    "created": "2022-08-17T17:34:09.789Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "search_type",
+        "value": "dfs_query_then_fetch",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "1104085e-fafd-41ce-a67f-7d92612d2cfb",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "Timeout",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&timeout=1ms",
+    "method": "GET",
+    "sortNum": 120000,
+    "created": "2022-08-17T17:34:09.790Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "timeout",
+        "value": "1ms",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "007dceeb-4317-4f92-975a-a2e47eb63b70",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "TerminateAfter",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&terminate_after=5",
+    "method": "GET",
+    "sortNum": 130000,
+    "created": "2022-08-17T17:34:09.791Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "terminate_after",
+        "value": "5",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "01b0bbfb-baf0-412e-b823-735680d1a71e",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "TrackScores",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&sort=market_cap&track_scores=true",
+    "method": "GET",
+    "sortNum": 140000,
+    "created": "2022-08-17T17:34:09.792Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "sort",
+        "value": "market_cap",
+        "isPath": false
+      },
+      {
+        "name": "track_scores",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e45caef5-3923-46e0-8a9e-a26f7f7ba839",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "TrackTotalHits",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&sort=market_cap&track_total_hits=50",
+    "method": "GET",
+    "sortNum": 150000,
+    "created": "2022-08-17T17:34:09.793Z",
+    "modified": "2022-08-17T17:34:09.779Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "sort",
+        "value": "market_cap",
+        "isPath": false
+      },
+      {
+        "name": "track_total_hits",
+        "value": "50",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

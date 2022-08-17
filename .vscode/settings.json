@@ -1,8 +1,9 @@
 {
   "json.schemas": [
-    { "fileMatch": ["*.es.json"], "url": "./mappings/schema.json" },
+    { "fileMatch": ["*.esm.json"], "url": "./mappings/schema.json" },
     { "fileMatch": ["*.esa.json"], "url": "./analyzers/schema.json" },
-    { "fileMatch": ["*.esi.json"], "url": "./index/schema.json" }
+    { "fileMatch": ["*.esi.json"], "url": "./index/schema.json" },
+		{ "fileMatch": ["*.esq.json"], "url": "./search/schema.json" }
   ],
-  "yaml.schemas": { "./mappings/schema.json": ["*.es.yaml"] }
+  "yaml.schemas": { "./mappings/schema.json": ["*.esm.yaml"] }
 }
