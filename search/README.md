@@ -95,3 +95,31 @@ Retrieves those params marked store in mappings. Specify with a list of comma-se
 ```
 ?stored_fields=_none_
 ```
+
+### analyze_wildcard
+determines whether to analyze wildcard or prefix queries. default:false
+
+```
+?analyze_wildcard=false
+```
+
+### allow_partial_search_results
+return partial results in the event of failure. default:true
+
+```
+?allow_partial_search_results=false
+```
+
+### batched_reduce_size
+Reduces number of temporary results collected in coordinating node
+
+```
+?batched_reduce_size=5
+```
+
+### df
+Specified default field to search
+
+```
+?df=fund_name
+```
