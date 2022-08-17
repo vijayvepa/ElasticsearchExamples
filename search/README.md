@@ -266,7 +266,19 @@ Specified default field to search
 ?df=fund_name
 ```
 
+RequestBody
 
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:=ishares edge global",
+			"default_operator": "AND",
+			"default_field": "fund_name"
+		}
+	}
+}
+```
 
 ### 1.2.14. lenient
 
@@ -274,6 +286,20 @@ Ignore data type mismatch. default: false
 
 ```
 ?lenient=true
+```
+
+RequestBody
+
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:=ishares edge global",
+			"default_operator": "AND",
+			"lenient": false
+		}
+	}
+}
 ```
 
 ### 1.2.15. search_type

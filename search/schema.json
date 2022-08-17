@@ -62,6 +62,11 @@
               "description": "Specifies the default field to search",
               "type": "string",
               "examples": ["fund_name"]
+            },
+            "lenient": {
+              "description": "Ignore data type mismatch",
+              "type": "boolean",
+			  "default": true
             }
           }
         }
