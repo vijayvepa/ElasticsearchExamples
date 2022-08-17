@@ -2780,5 +2780,30 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "143f1a20-39d7-4faf-8cd5-170c78f6d57b",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "StoredFields",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&stored_fields=_none_",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-08-17T15:36:16.305Z",
+    "modified": "2022-08-17T15:36:41.800Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "stored_fields",
+        "value": "_none_",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

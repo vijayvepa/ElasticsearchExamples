@@ -59,28 +59,28 @@ If false, no _source field is returned
 ?_source=false
 ```
 
-### q 
+### 1.2.5. q 
 Follow the DSL syntax to make search query
 ```
 ?q=fund_name:ishares edge global
 ```
 
 
-### default_operator
+### 1.2.6. default_operator
 When more than one condition is in query, specify `and|or`
 
 ```
 ?default_operator=AND
 ```
 
-### explain
+### 1.2.7. explain
 Provides a detailed explanation of relevance scoring
 
 ```
 explain=true
 ```
 
-### analyzer
+### 1.2.8. analyzer
 Search analyzer to be used to analyze input query string.
 
 ```
@@ -88,3 +88,10 @@ Search analyzer to be used to analyze input query string.
 ```
 
 default: standard
+
+### stored_fields
+Retrieves those params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying `_none_`
+
+```
+?stored_fields=_none_
+```
