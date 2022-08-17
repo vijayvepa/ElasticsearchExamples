@@ -33,7 +33,12 @@
     },
     "terminate_after": {
       "description": "Number of documents to be collected in a shard. Default: no limit",
-	  "type": "integer"
+      "type": "integer"
+    },
+    "track_scores": {
+      "description": "Allows tracking scores when sorting available",
+      "type": "boolean",
+	  "default": false
     },
     "stored_fields": {
       "description": "retrieves params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying none",

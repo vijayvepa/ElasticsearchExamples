@@ -1,10 +1,4 @@
 {
-	"query": {
-		"query_string": {
-			"query": "fund_name:=ishares edge global",
-			"default_operator": "AND",
-			"default_field": "fund_name"
-		}
-	},
-	"terminate_after": 1
+	"sort": "market_cap",
+	"track_scores": true
 }

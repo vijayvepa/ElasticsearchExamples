@@ -3364,29 +3364,18 @@
     "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
     "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
     "name": "TrackScores",
-    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&sort=market_cap&track_scores=true",
-    "method": "GET",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
     "sortNum": 140000,
     "created": "2022-08-17T17:34:09.792Z",
-    "modified": "2022-08-17T17:34:09.779Z",
+    "modified": "2022-08-17T19:21:06.013Z",
     "headers": [],
-    "params": [
-      {
-        "name": "q",
-        "value": "fund_name:edge global",
-        "isPath": false
-      },
-      {
-        "name": "sort",
-        "value": "market_cap",
-        "isPath": false
-      },
-      {
-        "name": "track_scores",
-        "value": "true",
-        "isPath": false
-      }
-    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"sort\": \"market_cap\",\n\t\"track_scores\": true\n}",
+      "form": []
+    },
     "tests": []
   },
   {

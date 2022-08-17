@@ -365,6 +365,15 @@ Allow tracking scores when sorting available. Default false.
 ?sort=fund_name:desc&track_scores=true
 ```
 
+RequestBody
+
+```json
+{
+	"sort":"market_cap",
+	"track_scores": true
+}
+```
+
 ### 1.2.19. track_total_hits
 
 Stipulates total number of hits allowed for tracking. Can be disabled with false. Default is 10000
