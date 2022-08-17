@@ -2655,5 +2655,40 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "1132ee78-2d70-4bd0-b190-da0c24ec78c2",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "URLParams",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?from=2&size=2&sort=symbol:asc&_source=false",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-17T14:47:45.157Z",
+    "modified": "2022-08-17T14:49:23.436Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "from",
+        "value": "2",
+        "isPath": false
+      },
+      {
+        "name": "size",
+        "value": "2",
+        "isPath": false
+      },
+      {
+        "name": "sort",
+        "value": "symbol:asc",
+        "isPath": false
+      },
+      {
+        "name": "_source",
+        "value": "false",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
