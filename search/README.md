@@ -381,3 +381,11 @@ Stipulates total number of hits allowed for tracking. Can be disabled with false
 ```
 ?track_total_hits=5
 ```
+RequestBody
+
+```json
+{
+	"sort": "market_cap",
+	"track_total_hits": 5
+}
+```
