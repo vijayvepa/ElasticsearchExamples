@@ -148,3 +148,9 @@ Ignore data type mismatch. default: false
 ```
 ?search_type=query_then_fetch
 ```
+
+### timeout
+Time permitted to complete search.
+```
+?timeout=5ms
+```
