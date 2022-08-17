@@ -342,6 +342,21 @@ Number of documents permitted to be collected in a shard. Default is no limit.
 ?terminate_after=5
 ```
 
+RequestBody
+
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:=ishares edge global",
+			"default_operator": "AND",
+			"default_field": "fund_name"
+		}
+	},
+	"terminate_after":1
+}
+```
+
 ### 1.2.18. track_scores
 
 Allow tracking scores when sorting available. Default false.

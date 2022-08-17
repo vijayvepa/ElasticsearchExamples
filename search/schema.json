@@ -29,7 +29,11 @@
     },
     "timeout": {
       "description": "Time permitted to complete search",
-	  "$ref": "#/definitions/estime"
+      "$ref": "#/definitions/estime"
+    },
+    "terminate_after": {
+      "description": "Number of documents to be collected in a shard. Default: no limit",
+	  "type": "integer"
     },
     "stored_fields": {
       "description": "retrieves params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying none",
@@ -90,7 +94,7 @@
     },
 	"estime":{
 		"type": "string",
-		"pattern": "^\\d+(ms|[m|s|d])$",
+		"pattern": "^\\d+(ms|[m|s|d|h])$",
 		"examples": ["5ms", "10m", "5d", "6s"]
 	}
   }

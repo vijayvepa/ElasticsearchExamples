@@ -6,5 +6,5 @@
 			"default_field": "fund_name"
 		}
 	},
-	"timeout": "5ms"
+	"terminate_after": 1
 }
