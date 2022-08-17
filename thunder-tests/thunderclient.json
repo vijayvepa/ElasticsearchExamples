@@ -2690,5 +2690,95 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "a2d7c8f2-0314-46d7-89ac-fdfbcdff020e",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "QueryDSL",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&default_operator=AND",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-08-17T14:57:11.576Z",
+    "modified": "2022-08-17T14:57:57.702Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "default_operator",
+        "value": "AND",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "cdb0552d-1042-4aaa-aaec-ef2c01f81886",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "QueryDSL Explain",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&default_operator=AND&explain=true",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-17T14:59:15.722Z",
+    "modified": "2022-08-17T14:59:45.019Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "default_operator",
+        "value": "AND",
+        "isPath": false
+      },
+      {
+        "name": "explain",
+        "value": "true",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0056c07e-dd2c-4cee-bb77-b645d5dc2757",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "QueryDSL Explain Analyzer",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&default_operator=AND&explain=true&analyzer=keyword",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-08-17T15:02:23.552Z",
+    "modified": "2022-08-17T15:02:52.831Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:ishares edge global",
+        "isPath": false
+      },
+      {
+        "name": "default_operator",
+        "value": "AND",
+        "isPath": false
+      },
+      {
+        "name": "explain",
+        "value": "true",
+        "isPath": false
+      },
+      {
+        "name": "analyzer",
+        "value": "keyword",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

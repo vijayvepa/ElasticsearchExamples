@@ -1,6 +1,18 @@
-# Search APIs
+# 1. Search APIs
 
-## GetAll
+<!-- TOC -->
+
+- [1. Search APIs](#1-search-apis)
+	- [1.1. GetAll](#11-getall)
+	- [1.2. URL Search Params](#12-url-search-params)
+		- [1.2.1. from](#121-from)
+		- [1.2.2. size](#122-size)
+		- [1.2.3. sort](#123-sort)
+		- [1.2.4. _source](#124-_source)
+
+<!-- /TOC -->
+
+## 1.1. GetAll
 
 ```api
 GET /index_name/_search
@@ -8,9 +20,9 @@ GET /index1,index2/_search
 GET /_search
 ```
 
-## URL Search Params
+## 1.2. URL Search Params
 
-### from
+### 1.2.1. from
 
 starting item to return in hits field
 
@@ -20,7 +32,7 @@ starting item to return in hits field
 
 default: 0
 
-### size
+### 1.2.2. size
 
 the number of items to return in the hits field
 
@@ -30,7 +42,7 @@ the number of items to return in the hits field
 
 default: 10
 
-### sort
+### 1.2.3. sort
 
 sort the field by specifying `field:asc` or `field:desc`
 ```
@@ -40,9 +52,39 @@ sort the field by specifying `field:asc` or `field:desc`
 ```
 defaults to ascending
 
-### _source
+### 1.2.4. _source
 If false, no _source field is returned
 
 ```
 ?_source=false
 ```
+
+### q 
+Follow the DSL syntax to make search query
+```
+?q=fund_name:ishares edge global
+```
+
+
+### default_operator
+When more than one condition is in query, specify `and|or`
+
+```
+?default_operator=AND
+```
+
+### explain
+Provides a detailed explanation of relevance scoring
+
+```
+explain=true
+```
+
+### analyzer
+Search analyzer to be used to analyze input query string.
+
+```
+?analyzer=keyword
+```
+
+default: standard
