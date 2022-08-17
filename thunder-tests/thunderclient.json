@@ -3232,24 +3232,24 @@
     "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
     "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
     "name": "BatchedReduceSize",
-    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&batched_reduce_size=5",
-    "method": "GET",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?batched_reduce_size=5",
+    "method": "POST",
     "sortNum": 80000,
     "created": "2022-08-17T17:34:09.786Z",
-    "modified": "2022-08-17T17:34:09.779Z",
+    "modified": "2022-08-17T18:48:13.441Z",
     "headers": [],
     "params": [
-      {
-        "name": "q",
-        "value": "fund_name:ishares edge global",
-        "isPath": false
-      },
       {
         "name": "batched_reduce_size",
         "value": "5",
         "isPath": false
       }
     ],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"query\": {\n\t\t\"query_string\": {\n\t\t\t\"query\": \"fund_name:=* edge global\",\n\t\t\t\"default_operator\": \"AND\",\n\t\t\t\"analyze_wildcard\": true\n\t\t}\n\t}\n}",
+      "form": []
+    },
     "tests": []
   },
   {

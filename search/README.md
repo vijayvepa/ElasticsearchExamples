@@ -251,6 +251,8 @@ Reduces number of temporary results collected in coordinating node
 ?batched_reduce_size=5
 ```
 
+- must be passed in query string
+
 ### 1.2.13. df
 
 Specified default field to search
