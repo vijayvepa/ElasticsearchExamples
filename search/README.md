@@ -140,3 +140,11 @@ Ignore data type mismatch. default: false
 ```
 ?lenient=true
 ```
+
+### 1.2.15. search_type
+- `query_then_fetch` -> good relevancy scoring method (default)
+- `dfs_query_then_fetch` -> better in terms of accuracy
+
+```
+?search_type=query_then_fetch
+```
