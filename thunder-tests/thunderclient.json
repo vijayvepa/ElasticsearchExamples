@@ -2980,5 +2980,30 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "f912e284-059c-40f3-b9df-2795873c175d",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "TerminateAfter",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&terminate_after=5",
+    "method": "GET",
+    "sortNum": 130000,
+    "created": "2022-08-17T16:31:29.704Z",
+    "modified": "2022-08-17T16:31:45.328Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "terminate_after",
+        "value": "5",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

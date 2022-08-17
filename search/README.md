@@ -154,3 +154,9 @@ Time permitted to complete search.
 ```
 ?timeout=5ms
 ```
+
+### terminate_after
+Number of documents permitted to be collected in a shard. Default is no limit.
+```
+?terminate_after=5
+```
