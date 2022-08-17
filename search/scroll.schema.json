@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["scroll_id"],
+  "properties": {
+	  "scroll": {
+		  "description": "the live time period the snapshot is kept",
+		  "$ref": "./schema.json#/definitions/estime"
+	  },
+	  "scroll_id":{
+		  "description": "the id provided by _search?scroll=10m",
+		  "type": "string",
+		  "format": "base64"
+	  }
+   }
+}

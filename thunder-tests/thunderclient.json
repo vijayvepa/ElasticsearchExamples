@@ -3434,5 +3434,68 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "1c3e9b14-f6fc-4225-b099-37d90e102745",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "ee5661db-93b1-4e21-a79e-cdd0c65c2d6f",
+    "name": "Pagination with Scroll",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?scroll=10m",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-17T19:35:53.042Z",
+    "modified": "2022-08-17T19:37:27.025Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "scroll",
+        "value": "10m",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"size\": 313\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "983c6356-c4b4-4fea-b624-7d0f1bc18b67",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "ee5661db-93b1-4e21-a79e-cdd0c65c2d6f",
+    "name": "GetNextBatch",
+    "url": "http://localhost:{{dockerPort}}/_search/scroll",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-17T19:58:50.860Z",
+    "modified": "2022-08-17T20:01:26.371Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"scroll\": \"10m\",\n\t\"scroll_id\": \"FGluY2x1ZGVfY29udGV4dF91dWlkDXF1ZXJ5QW5kRmV0Y2gBFmtFbm9qNWQzUnNxX0k5TnFtX2YwWWcAAAAAAAAA1BY3ckVLc1ZBUVRxeUZfTnRpNFViV3Rn\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "525ab687-05c9-4979-abe5-e3501038fdf8",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "ee5661db-93b1-4e21-a79e-cdd0c65c2d6f",
+    "name": "CleanupScroll",
+    "url": "http://localhost:{{dockerPort}}/_search/scroll",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2022-08-17T20:01:55.102Z",
+    "modified": "2022-08-17T20:02:10.936Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"scroll_id\": \"FGluY2x1ZGVfY29udGV4dF91dWlkDXF1ZXJ5QW5kRmV0Y2gBFmtFbm9qNWQzUnNxX0k5TnFtX2YwWWcAAAAAAAAA1BY3ckVLc1ZBUVRxeUZfTnRpNFViV3Rn\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
