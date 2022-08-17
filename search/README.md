@@ -3,22 +3,22 @@
 <!-- TOC -->
 
 - [1. Search APIs](#1-search-apis)
-	- [1.1. GetAll](#11-getall)
-	- [1.2. URL Search Params](#12-url-search-params)
-		- [1.2.1. from](#121-from)
-		- [1.2.2. size](#122-size)
-		- [1.2.3. sort](#123-sort)
-		- [1.2.4. _source](#124-_source)
-		- [1.2.5. q](#125-q)
-		- [1.2.6. default_operator](#126-default_operator)
-		- [1.2.7. explain](#127-explain)
-		- [1.2.8. analyzer](#128-analyzer)
-		- [1.2.9. stored_fields](#129-stored_fields)
-		- [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
-		- [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
-		- [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
-		- [1.2.13. df](#1213-df)
-		- [1.2.14. lenient](#1214-lenient)
+  - [1.1. GetAll](#11-getall)
+  - [1.2. URL Search Params](#12-url-search-params)
+    - [1.2.1. from](#121-from)
+    - [1.2.2. size](#122-size)
+    - [1.2.3. sort](#123-sort)
+    - [1.2.4. \_source](#124-_source)
+    - [1.2.5. q](#125-q)
+    - [1.2.6. default_operator](#126-default_operator)
+    - [1.2.7. explain](#127-explain)
+    - [1.2.8. analyzer](#128-analyzer)
+    - [1.2.9. stored_fields](#129-stored_fields)
+    - [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
+    - [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
+    - [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
+    - [1.2.13. df](#1213-df)
+    - [1.2.14. lenient](#1214-lenient)
 
 <!-- /TOC -->
 
@@ -55,28 +55,33 @@ default: 10
 ### 1.2.3. sort
 
 sort the field by specifying `field:asc` or `field:desc`
+
 ```
 ?sort=field:desc
 ?sort=_score:asc
 ?sort=field
 ```
+
 defaults to ascending
 
-### 1.2.4. _source
-If false, no _source field is returned
+### 1.2.4. \_source
+
+If false, no \_source field is returned
 
 ```
 ?_source=false
 ```
 
-### 1.2.5. q 
+### 1.2.5. q
+
 Follow the DSL syntax to make search query
+
 ```
 ?q=fund_name:ishares edge global
 ```
 
-
 ### 1.2.6. default_operator
+
 When more than one condition is in query, specify `and|or`
 
 ```
@@ -84,6 +89,7 @@ When more than one condition is in query, specify `and|or`
 ```
 
 ### 1.2.7. explain
+
 Provides a detailed explanation of relevance scoring
 
 ```
@@ -91,6 +97,7 @@ explain=true
 ```
 
 ### 1.2.8. analyzer
+
 Search analyzer to be used to analyze input query string.
 
 ```
@@ -100,6 +107,7 @@ Search analyzer to be used to analyze input query string.
 default: standard
 
 ### 1.2.9. stored_fields
+
 Retrieves those params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying `_none_`
 
 ```
@@ -107,6 +115,7 @@ Retrieves those params marked store in mappings. Specify with a list of comma-se
 ```
 
 ### 1.2.10. analyze_wildcard
+
 determines whether to analyze wildcard or prefix queries. default:false
 
 ```
@@ -114,6 +123,7 @@ determines whether to analyze wildcard or prefix queries. default:false
 ```
 
 ### 1.2.11. allow_partial_search_results
+
 return partial results in the event of failure. default:true
 
 ```
@@ -121,6 +131,7 @@ return partial results in the event of failure. default:true
 ```
 
 ### 1.2.12. batched_reduce_size
+
 Reduces number of temporary results collected in coordinating node
 
 ```
@@ -128,6 +139,7 @@ Reduces number of temporary results collected in coordinating node
 ```
 
 ### 1.2.13. df
+
 Specified default field to search
 
 ```
@@ -135,6 +147,7 @@ Specified default field to search
 ```
 
 ### 1.2.14. lenient
+
 Ignore data type mismatch. default: false
 
 ```
@@ -142,6 +155,7 @@ Ignore data type mismatch. default: false
 ```
 
 ### 1.2.15. search_type
+
 - `query_then_fetch` -> good relevancy scoring method (default)
 - `dfs_query_then_fetch` -> better in terms of accuracy
 
@@ -150,13 +164,25 @@ Ignore data type mismatch. default: false
 ```
 
 ### timeout
+
 Time permitted to complete search.
+
 ```
 ?timeout=5ms
 ```
 
 ### terminate_after
+
 Number of documents permitted to be collected in a shard. Default is no limit.
+
 ```
 ?terminate_after=5
+```
+
+### track_scores
+
+Allow tracking scores when sorting available. Default false.
+
+```
+sort=fund_name:desc&track_scores=true
 ```
