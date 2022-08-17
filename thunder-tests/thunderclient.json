@@ -3415,5 +3415,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "18b63dbf-837c-4e7a-9769-c901b3ebd87d",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "Sort Multi",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
+    "sortNum": 17500,
+    "created": "2022-08-17T19:33:38.598Z",
+    "modified": "2022-08-17T19:33:49.445Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"fund_name:ishares edge msci\",\n      \"default_operator\": \"AND\"\n    }\n  },\n  \"sort\": { \"rating\": \"desc\", \"symbol\": \"asc\" }\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]
