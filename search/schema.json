@@ -27,6 +27,10 @@
       "description": "provides a detailed explanation of relevance sorting",
       "default": false
     },
+    "timeout": {
+      "description": "Time permitted to complete search",
+	  "$ref": "#/definitions/estime"
+    },
     "stored_fields": {
       "description": "retrieves params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying none",
       "anyOf": [
@@ -66,7 +70,7 @@
             "lenient": {
               "description": "Ignore data type mismatch",
               "type": "boolean",
-			  "default": true
+              "default": true
             }
           }
         }
@@ -83,6 +87,11 @@
           "default": "asc"
         }
       }
-    }
+    },
+	"estime":{
+		"type": "string",
+		"pattern": "^\\d+(ms|[m|s|d])$",
+		"examples": ["5ms", "10m", "5d", "6s"]
+	}
   }
 }

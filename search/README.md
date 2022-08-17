@@ -320,6 +320,20 @@ Time permitted to complete search.
 ?timeout=5ms
 ```
 
+RequestBody
+
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:=ishares edge global",
+			"default_operator": "AND"
+		}
+	},
+	"timeout": "5ms"
+}
+```
+
 ### 1.2.17. terminate_after
 
 Number of documents permitted to be collected in a shard. Default is no limit.
