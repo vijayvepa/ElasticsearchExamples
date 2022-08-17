@@ -4,5 +4,6 @@
 			"query": "fund_name:ishares edge global",
 			"default_operator": "AND"
 		}
-	}
+	},
+	"explain": true
 }

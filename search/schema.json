@@ -29,6 +29,11 @@
 		"type": "boolean",
 		"default": true
 	},
+	"explain":{
+		"type": "boolean",
+		"description": "provides a detailed explanation of relevance sorting",
+		"default": false 
+	},
     "query": {
       "type": "object",
       "properties": {
