@@ -14,40 +14,17 @@
       "type": "array",
       "description": "Convert original input text into a stream of characters then preprocess it before passing it as an input to tokenizer",
       "items": {
-        "anyOf": [
-          { "$ref": "#/definitions/escharfilter" },
-          { "$ref": "#/definitions/escharfiltermap" },
-          { "$ref": "#/definitions/escharfilterpattern" }
-        ]
+            "$ref": "#/definitions/charfilter_anyOf" 
       }
     },
     "tokenizer": {
       "description": "Split the Output of Character Filters into Unique Terms",
-      "anyOf": [
-        { "$ref": "#/definitions/estokenizer" },
-        { "$ref": "#/definitions/esngram" },
-        { "$ref": "#/definitions/estokenizerstructpattern" },
-        { "$ref": "#/definitions/estokenizerchargroup" },
-        { "$ref": "#/definitions/estokenizerpathhierarchy" }
-      ]
+      "$ref": "#/definitions/tokenizer_anyOf"  
     },
     "filter": {
       "type": "array",
       "items": {
-        "anyOf": [
-          { "$ref": "#/definitions/estokenfilter" },
-          { "$ref": "#/definitions/estokenfilter_asciifolding" },
-          { "$ref": "#/definitions/esngram" },
-          { "$ref": "#/definitions/estokenfilter_fingerprint" },
-          { "$ref": "#/definitions/estokenfilter_keep" },
-          { "$ref": "#/definitions/estokenfilter_keeptypes" },
-          { "$ref": "#/definitions/estokenfilter_stemmer" },
-          { "$ref": "#/definitions/estokenfilter_stop" },
-          { "$ref": "#/definitions/estokenfilter_conditional" },
-          { "$ref": "#/definitions/estokenfilter_predicate" },
-          { "$ref": "#/definitions/estokenfilter_length" },
-          { "$ref": "#/definitions/estokenfilter_worddelimiter" }
-        ]
+           "$ref": "#/definitions/tokenfilter_anyOf" 
       }
     }
   },
@@ -615,6 +592,39 @@
           "examples": ["token.getType()=='<ALPHANUM>'"]
         }
       }
+    },
+    "charfilter_anyOf": {
+      "anyOf": [
+        { "$ref": "#/definitions/escharfilter" },
+        { "$ref": "#/definitions/escharfiltermap" },
+        { "$ref": "#/definitions/escharfilterpattern" }
+      ]
+    },
+    "tokenizer_anyOf": {
+      "anyOf": [
+        { "$ref": "#/definitions/estokenizer" },
+        { "$ref": "#/definitions/esngram" },
+        { "$ref": "#/definitions/estokenizerstructpattern" },
+        { "$ref": "#/definitions/estokenizerchargroup" },
+        { "$ref": "#/definitions/estokenizerpathhierarchy" }
+      ]
+    },
+    "tokenfilter_anyOf": {
+      "anyOf": [
+        { "$ref": "#/definitions/estokenfilter" },
+        { "$ref": "#/definitions/estokenfilter_asciifolding" },
+        { "$ref": "#/definitions/esngram" },
+        { "$ref": "#/definitions/estokenfilter_fingerprint" },
+        { "$ref": "#/definitions/estokenfilter_keep" },
+        { "$ref": "#/definitions/estokenfilter_keeptypes" },
+        { "$ref": "#/definitions/estokenfilter_stemmer" },
+        { "$ref": "#/definitions/estokenfilter_stop" },
+        { "$ref": "#/definitions/estokenfilter_conditional" },
+        { "$ref": "#/definitions/estokenfilter_predicate" },
+        { "$ref": "#/definitions/estokenfilter_length" },
+        { "$ref": "#/definitions/estokenfilter_worddelimiter" },
+        { "$ref": "#/definitions/escharfilterpattern" }
+      ]
     }
   }
 }

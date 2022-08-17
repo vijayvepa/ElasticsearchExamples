@@ -2542,14 +2542,38 @@
     "_id": "47a49494-6897-4fa7-bcbd-a53b89beb21c",
     "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
     "containerId": "0a0dec71-190c-4ecc-ba2d-425e40fa6b11",
-    "name": "Standard Copy",
-    "url": "http://localhost:{{dockerPort}}/cf_etf/_mappings",
-    "method": "GET",
+    "name": "Create Index With Custom Analyzer",
+    "url": "http://localhost:{{dockerPort}}/cf_etf_custom_analyzer",
+    "method": "PUT",
     "sortNum": 10000,
     "created": "2022-08-16T16:12:02.480Z",
-    "modified": "2022-08-16T16:12:25.099Z",
+    "modified": "2022-08-17T13:41:19.584Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"mappings\": {\n    \"dynamic\": false,\n    \"properties\": {\n      \"symbol\": { \"type\": \"keyword\" },\n      \"fund_name\": { \"type\": \"text\" },\n      \"rating\": { \"type\": \"byte\" },\n      \"morningstar_category\": { \"type\": \"keyword\" },\n      \"category\": { \"type\": \"keyword\" },\n      \"family\": { \"type\": \"keyword\" },\n      \"market_cap\": { \"type\": \"keyword\" },\n      \"description\": {\n        \"type\": \"text\",\n        \"fields\": { \"raw\": { \"type\": \"keyword\" } },\n        \"analyzer\": \"description_analyzer\",\n        \"search_analyzer\": \"description_analyzer\"\n      }\n    }\n  },\n  \"settings\": {\n    \"analysis\": {\n      \"analyzer\": {\n        \"description_analyzer\": {\n          \"type\": \"custom\",\n          \"tokenizer\": \"description_tokenizer\",\n          \"filter\": [\n            \"lowercase\",\n            \"description_pattern_replace_filter\",\n            \"description_stemmer_filter\",\n            \"description_stop_filter\",\n            \"description_length_filter\",\n            \"unique\"\n          ]\n        }\n      },\n\t  \"tokenizer\": {\n\t\t  \"description_tokenizer\": {\n\t\t\t  \"type\": \"char_group\",\n\t\t\t  \"tokenize_on_chars\": [\"whitespace\", \"digit\", \"symbol\", \"\\\\n\", \",\", \":\", \"!\", \"?\",\";\", \",\",\"_\", \"{\", \"[\", \"}\", \"]\", \"(\", \")\", \"\\\\\", \"\\/\", \"\\\"\" ]\n\t\t  }\n\t  },\n\t  \"filter\":{\n\t\t\t\"description_pattern_replace_filter\": {\"type\": \"pattern_replace\", \"pattern\": \"(\\\\w{2,})\\\\.\", \"replacement\": \"$1\" },\n\t\t\t\"description_stemmer_filter\":{\"type\": \"stemmer\", \"name\": \"light_english\"},\n\t\t\t\"description_stop_filter\": {\"type\": \"stop\", \"stopwords\": [\"_english_\"]},\n\t\t\t\"description_length_filter\":{\"type\": \"length\", \"min\": 2}\n\t  }\n    }\n  }\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c8a629f9-241a-4584-8d52-9df16e0e34f9",
+    "colId": "c6d238d0-f14e-462a-9f5a-2023fca961f9",
+    "containerId": "0a0dec71-190c-4ecc-ba2d-425e40fa6b11",
+    "name": "Analyze Against Index",
+    "url": "http://localhost:{{dockerPort}}/cf_etf_custom_analyzer/_analyze",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-17T13:41:26.933Z",
+    "modified": "2022-08-17T13:43:59.994Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"text\": \"The investment seeks to track the price and yield performance, before fees and expenses, of the Bloomberg Barclays U.S. Aggregate Enhanced Yield Index (the \\\\\\\"index\\\\\\\"). \\\\n The index is designed to broadly capture the U.S. investment grade, fixed income securities market while seeking to enhance yield within desired risk parameters and constraints. The fund is non-diversified.\",\n  \"analyzer\": \"description_analyzer\"\n}\n",
+      "form": []
+    },
     "tests": []
   }
 ]
