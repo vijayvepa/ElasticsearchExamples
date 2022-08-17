@@ -15,25 +15,21 @@
 
     "sort": {
       "description": "sort the specified fields",
-      "type": "object",
-      "patternProperties": {
-        "^.*$": {
-          "type": "string",
-          "enum": ["asc", "desc"],
-          "default": "asc"
-        }
-      }
+      "anyOf": [
+		  {"$ref": "#/definitions/essort"},
+		  {"type": "string"}
+	  ]
     },
     "_source": {
-		"description": "if false, no source is returned",
-		"type": "boolean",
-		"default": true
-	},
-	"explain":{
-		"type": "boolean",
-		"description": "provides a detailed explanation of relevance sorting",
-		"default": false 
-	},
+      "description": "if false, no source is returned",
+      "type": "boolean",
+      "default": true
+    },
+    "explain": {
+      "type": "boolean",
+      "description": "provides a detailed explanation of relevance sorting",
+      "default": false
+    },
     "query": {
       "type": "object",
       "properties": {
@@ -50,6 +46,18 @@
               "default": "AND"
             }
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "essort": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "string",
+          "enum": ["asc", "desc"],
+          "default": "asc"
         }
       }
     }

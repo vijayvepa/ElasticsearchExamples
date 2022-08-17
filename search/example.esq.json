@@ -5,5 +5,6 @@
 			"default_operator": "AND"
 		}
 	},
-	"explain": true
+	"explain": true,
+	"sort": "symbol"
 }

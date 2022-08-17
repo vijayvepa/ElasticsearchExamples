@@ -30,14 +30,24 @@ GET /index1,index2/_search
 GET /_search
 ```
 
-## 1.2. URL Search Params
+## 1.2. Search Params
 
 ### 1.2.1. from
 
 starting item to return in hits field
 
+URL
+
 ```
 ?from=2
+```
+
+RequestBody
+
+```json
+{
+  "from": 2
+}
 ```
 
 default: 0
@@ -46,8 +56,18 @@ default: 0
 
 the number of items to return in the hits field
 
+URL
+
 ```
 ?size=10
+```
+
+RequestBody
+
+```json
+{
+  "size": 10
+}
 ```
 
 default: 10
@@ -56,10 +76,21 @@ default: 10
 
 sort the field by specifying `field:asc` or `field:desc`
 
+URL
+
 ```
 ?sort=field:desc
 ?sort=_score:asc
 ?sort=field
+```
+
+RequestBody
+
+```json
+{
+	"sort": {"field": "desc", "_score": "asc"},
+	"sort": "field"
+}
 ```
 
 defaults to ascending

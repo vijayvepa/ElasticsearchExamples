@@ -3458,5 +3458,24 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "881a76a7-93b1-4d4b-8654-7b8d8ba994c5",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
+    "name": "Sort Alt",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
+    "sortNum": 15000,
+    "created": "2022-08-17T17:49:41.154Z",
+    "modified": "2022-08-17T17:50:48.298Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"query\": {\n\t\t\"query_string\": {\n\t\t\t\"query\": \"fund_name:ishares edge global\",\n\t\t\t\"default_operator\": \"AND\"\n\t\t}\n\t},\n\t\"explain\": true,\n\t\"sort\": \"symbol\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
