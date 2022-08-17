@@ -310,6 +310,7 @@ RequestBody
 ```
 ?search_type=query_then_fetch
 ```
+- can only be specified in query string
 
 ### 1.2.16. timeout
 
