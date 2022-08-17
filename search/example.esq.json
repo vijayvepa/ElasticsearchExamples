@@ -1,9 +1,9 @@
 {
 	"query": {
 		"query_string": {
-			"query": "fund_name:=* edge global",
+			"query": "fund_name:=ishares edge global",
 			"default_operator": "AND",
-			"analyze_wildcard": true
+			"default_field": "fund_name"
 		}
 	}
 }

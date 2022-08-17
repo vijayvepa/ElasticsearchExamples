@@ -3,22 +3,27 @@
 <!-- TOC -->
 
 - [1. Search APIs](#1-search-apis)
-  - [1.1. GetAll](#11-getall)
-  - [1.2. URL Search Params](#12-url-search-params)
-    - [1.2.1. from](#121-from)
-    - [1.2.2. size](#122-size)
-    - [1.2.3. sort](#123-sort)
-    - [1.2.4. \_source](#124-_source)
-    - [1.2.5. q](#125-q)
-    - [1.2.6. default_operator](#126-default_operator)
-    - [1.2.7. explain](#127-explain)
-    - [1.2.8. analyzer](#128-analyzer)
-    - [1.2.9. stored_fields](#129-stored_fields)
-    - [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
-    - [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
-    - [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
-    - [1.2.13. df](#1213-df)
-    - [1.2.14. lenient](#1214-lenient)
+	- [1.1. GetAll](#11-getall)
+	- [1.2. Search Params](#12-search-params)
+		- [1.2.1. from](#121-from)
+		- [1.2.2. size](#122-size)
+		- [1.2.3. sort](#123-sort)
+		- [1.2.4. \_source](#124-\_source)
+		- [1.2.5. q](#125-q)
+		- [1.2.6. default_operator](#126-default_operator)
+		- [1.2.7. explain](#127-explain)
+		- [1.2.8. analyzer](#128-analyzer)
+		- [1.2.9. stored_fields](#129-stored_fields)
+		- [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
+		- [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
+		- [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
+		- [1.2.13. df](#1213-df)
+		- [1.2.14. lenient](#1214-lenient)
+		- [1.2.15. search_type](#1215-search_type)
+		- [1.2.16. timeout](#1216-timeout)
+		- [1.2.17. terminate_after](#1217-terminate_after)
+		- [1.2.18. track_scores](#1218-track_scores)
+		- [1.2.19. track_total_hits](#1219-track_total_hits)
 
 <!-- /TOC -->
 
@@ -261,6 +266,8 @@ Specified default field to search
 ?df=fund_name
 ```
 
+
+
 ### 1.2.14. lenient
 
 Ignore data type mismatch. default: false
@@ -278,7 +285,7 @@ Ignore data type mismatch. default: false
 ?search_type=query_then_fetch
 ```
 
-### timeout
+### 1.2.16. timeout
 
 Time permitted to complete search.
 
@@ -286,7 +293,7 @@ Time permitted to complete search.
 ?timeout=5ms
 ```
 
-### terminate_after
+### 1.2.17. terminate_after
 
 Number of documents permitted to be collected in a shard. Default is no limit.
 
@@ -294,7 +301,7 @@ Number of documents permitted to be collected in a shard. Default is no limit.
 ?terminate_after=5
 ```
 
-### track_scores
+### 1.2.18. track_scores
 
 Allow tracking scores when sorting available. Default false.
 
@@ -302,7 +309,7 @@ Allow tracking scores when sorting available. Default false.
 ?sort=fund_name:desc&track_scores=true
 ```
 
-### track_total_hits
+### 1.2.19. track_total_hits
 
 Stipulates total number of hits allowed for tracking. Can be disabled with false. Default is 10000
 

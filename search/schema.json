@@ -57,6 +57,11 @@
               "type": "boolean",
               "description": "whether to analyze wildcard or prefix queries",
               "default": false
+            },
+            "default_field": {
+              "description": "Specifies the default field to search",
+              "type": "string",
+              "examples": ["fund_name"]
             }
           }
         }
