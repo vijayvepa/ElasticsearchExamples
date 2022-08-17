@@ -15,10 +15,7 @@
 
     "sort": {
       "description": "sort the specified fields",
-      "anyOf": [
-		  {"$ref": "#/definitions/essort"},
-		  {"type": "string"}
-	  ]
+      "anyOf": [{ "$ref": "#/definitions/essort" }, { "type": "string" }]
     },
     "_source": {
       "description": "if false, no source is returned",
@@ -29,6 +26,13 @@
       "type": "boolean",
       "description": "provides a detailed explanation of relevance sorting",
       "default": false
+    },
+    "stored_fields": {
+      "description": "retrieves params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying none",
+      "anyOf": [
+		  {"type":"string", "enum": ["_none_"]},
+		  {"type":"string", "examples": ["field1,field2"]}
+	  ]
     },
     "query": {
       "type": "object",

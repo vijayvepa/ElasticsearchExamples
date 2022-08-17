@@ -3163,24 +3163,18 @@
     "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
     "containerId": "c31a2893-26e4-4a1b-997c-ade5da4f0205",
     "name": "StoredFields",
-    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:ishares edge global&stored_fields=_none_",
-    "method": "GET",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "POST",
     "sortNum": 50000,
     "created": "2022-08-17T17:34:09.783Z",
-    "modified": "2022-08-17T17:34:09.779Z",
+    "modified": "2022-08-17T18:31:19.525Z",
     "headers": [],
-    "params": [
-      {
-        "name": "q",
-        "value": "fund_name:ishares edge global",
-        "isPath": false
-      },
-      {
-        "name": "stored_fields",
-        "value": "_none_",
-        "isPath": false
-      }
-    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"query\": {\n\t\t\"query_string\": {\n\t\t\t\"query\": \"fund_name:ishares edge global\",\n\t\t\t\"default_operator\": \"AND\"\n\t\t}\n\t},\n\t\"stored_fields\": \"fund_name\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
