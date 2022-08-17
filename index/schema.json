@@ -14,6 +14,11 @@
             "analyzer": {
               "$ref": "#/definitions/esanalyze_custom"
             },
+
+            "normalizer": {
+              "description": "similar to analyzer but guarantees to generate single token",
+              "$ref": "#/definitions/esanalyze_custom"
+            },
             "tokenizer": {
               "$ref": "#/definitions/estokenizer_custom"
             },

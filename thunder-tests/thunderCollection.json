@@ -224,6 +224,13 @@
         "containerId": "",
         "created": "2022-08-16T16:11:44.500Z",
         "sortNum": 100000
+      },
+      {
+        "_id": "a660a8b1-5e0d-4832-9f67-6a75a3d79181",
+        "name": "CustomNormalizer",
+        "containerId": "",
+        "created": "2022-08-17T13:54:09.504Z",
+        "sortNum": 110000
       }
     ]
   }
