@@ -1,9 +1,9 @@
 {
 	"query": {
 		"query_string": {
-			"query": "fund_name:ishares edge global",
-			"default_operator": "AND"
+			"query": "fund_name:=* edge global",
+			"default_operator": "AND",
+			"analyze_wildcard": true
 		}
-	},
-	"stored_fields": "fund_name"
+	}
 }

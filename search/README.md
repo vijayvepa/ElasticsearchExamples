@@ -206,6 +206,12 @@ Retrieves those params marked store in mappings. Specify with a list of comma-se
 ?stored_fields=_none_
 ```
 
+```json
+{
+	"stored_fields": "_none_"
+}
+```
+
 ### 1.2.10. analyze_wildcard
 
 determines whether to analyze wildcard or prefix queries. default:false

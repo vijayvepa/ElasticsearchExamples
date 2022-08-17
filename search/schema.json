@@ -30,9 +30,9 @@
     "stored_fields": {
       "description": "retrieves params marked store in mappings. Specify with a list of comma-separated fields or disable it by specifying none",
       "anyOf": [
-		  {"type":"string", "enum": ["_none_"]},
-		  {"type":"string", "examples": ["field1,field2"]}
-	  ]
+        { "type": "string", "enum": ["_none_"] },
+        { "type": "string", "examples": ["field1,field2"] }
+      ]
     },
     "query": {
       "type": "object",
@@ -52,6 +52,11 @@
             "analyzer": {
               "description": "Search analyzer to be used to analyze input query string",
               "$ref": "../analyzers/schema.json#/definitions/esanalyze"
+            },
+            "analyze_wildcard": {
+              "type": "boolean",
+              "description": "whether to analyze wildcard or prefix queries",
+              "default": false
             }
           }
         }
