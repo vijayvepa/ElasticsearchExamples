@@ -184,5 +184,13 @@ Number of documents permitted to be collected in a shard. Default is no limit.
 Allow tracking scores when sorting available. Default false.
 
 ```
-sort=fund_name:desc&track_scores=true
+?sort=fund_name:desc&track_scores=true
+```
+
+### track_total_hits
+
+Stipulates total number of hits allowed for tracking. Can be disabled with false. Default is 10000
+
+```
+?track_total_hits=5
 ```

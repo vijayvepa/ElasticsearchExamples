@@ -3035,5 +3035,35 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "7b3d6a2e-3bfe-4ca1-9077-fc07032f586e",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "d83502a9-f99f-42fa-aeab-6656660960dd",
+    "name": "TrackTotalHits",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search?q=fund_name:edge global&sort=market_cap&track_total_hits=50",
+    "method": "GET",
+    "sortNum": 150000,
+    "created": "2022-08-17T16:42:33.058Z",
+    "modified": "2022-08-17T16:43:02.868Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "fund_name:edge global",
+        "isPath": false
+      },
+      {
+        "name": "sort",
+        "value": "market_cap",
+        "isPath": false
+      },
+      {
+        "name": "track_total_hits",
+        "value": "50",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
