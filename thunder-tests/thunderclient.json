@@ -2613,5 +2613,47 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "b2a60d94-e77e-42f1-9eb8-a56ce6b1de2f",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "2061d5c6-3c4c-4c41-8398-e97176609545",
+    "name": "GetAllDocs",
+    "url": "http://localhost:{{dockerPort}}/cf_etf/_search",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-08-17T14:28:28.180Z",
+    "modified": "2022-08-17T14:40:40.634Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b733ce70-ab3b-4665-a609-8cbceec4f0cb",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "2061d5c6-3c4c-4c41-8398-e97176609545",
+    "name": "GetAllDocsMultiIndexes",
+    "url": "http://localhost:{{dockerPort}}/cf_etf,cf_view/_search",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-08-17T14:35:06.544Z",
+    "modified": "2022-08-17T14:40:41.921Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "097797ed-b1bb-4b05-825e-5acb582e506d",
+    "colId": "ecc76d6d-4739-4395-b9ce-ec14817bf72a",
+    "containerId": "2061d5c6-3c4c-4c41-8398-e97176609545",
+    "name": "GetAllInCluster",
+    "url": "http://localhost:{{dockerPort}}/_search",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-17T14:40:47.366Z",
+    "modified": "2022-08-17T14:41:33.106Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
