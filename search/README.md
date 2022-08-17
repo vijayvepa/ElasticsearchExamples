@@ -220,6 +220,20 @@ determines whether to analyze wildcard or prefix queries. default:false
 ?analyze_wildcard=false
 ```
 
+RequestBody
+
+```json
+{
+	"query": {
+		"query_string": {
+			"query": "fund_name:=* edge global",
+			"default_operator": "AND",
+			"analyze_wildcard": true
+		}
+	}
+}
+```
+
 ### 1.2.11. allow_partial_search_results
 
 return partial results in the event of failure. default:true
@@ -227,6 +241,7 @@ return partial results in the event of failure. default:true
 ```
 ?allow_partial_search_results=false
 ```
+- must be passed in query string
 
 ### 1.2.12. batched_reduce_size
 
