@@ -12,6 +12,15 @@
       "type": "integer",
       "default": 10
     },
+    "search_after": {
+      "description": "start the search after specified hits",
+      "anyOf": [
+        { "type": "array" },
+        { "type": "string" },
+        { "type": "integer" },
+        { "type": "number" }
+      ]
+    },
 
     "sort": {
       "description": "sort the specified fields",
@@ -102,10 +111,10 @@
         }
       }
     },
-	"estime":{
-		"type": "string",
-		"pattern": "^\\d+(ms|[m|s|d|h])$",
-		"examples": ["5ms", "10m", "5d", "6s"]
-	}
+    "estime": {
+      "type": "string",
+      "pattern": "^\\d+(ms|[m|s|d|h])$",
+      "examples": ["5ms", "10m", "5d", "6s"]
+    }
   }
 }

@@ -2,28 +2,36 @@
 
 <!-- TOC -->
 
-- [1. Search APIs](#1-search-apis)
-  - [1.1. GetAll](#11-getall)
-  - [1.2. Search Params](#12-search-params)
-    - [1.2.1. from](#121-from)
-    - [1.2.2. size](#122-size)
-    - [1.2.3. sort](#123-sort)
-    - [1.2.4. \_source](#124-_source)
-    - [1.2.5. q](#125-q)
-    - [1.2.6. default_operator](#126-default_operator)
-    - [1.2.7. explain](#127-explain)
-    - [1.2.8. analyzer](#128-analyzer)
-    - [1.2.9. stored_fields](#129-stored_fields)
-    - [1.2.10. analyze_wildcard](#1210-analyze_wildcard)
-    - [1.2.11. allow_partial_search_results](#1211-allow_partial_search_results)
-    - [1.2.12. batched_reduce_size](#1212-batched_reduce_size)
-    - [1.2.13. df](#1213-df)
-    - [1.2.14. lenient](#1214-lenient)
-    - [1.2.15. search_type](#1215-search_type)
-    - [1.2.16. timeout](#1216-timeout)
-    - [1.2.17. terminate_after](#1217-terminate_after)
-    - [1.2.18. track_scores](#1218-track_scores)
-    - [1.2.19. track_total_hits](#1219-track_total_hits)
+- [Search APIs](#search-apis)
+	- [1. GetAll](#1-getall)
+	- [2. Search Params](#2-search-params)
+		- [2.1. from](#21-from)
+		- [2.2. size](#22-size)
+		- [2.3. sort](#23-sort)
+		- [2.4. \_source](#24-%5C_source)
+		- [2.5. q](#25-q)
+		- [2.6. default_operator](#26-default_operator)
+		- [2.7. explain](#27-explain)
+		- [2.8. analyzer](#28-analyzer)
+		- [2.9. stored_fields](#29-stored_fields)
+		- [2.10. analyze_wildcard](#210-analyze_wildcard)
+		- [2.11. allow_partial_search_results](#211-allow_partial_search_results)
+		- [2.12. batched_reduce_size](#212-batched_reduce_size)
+		- [2.13. df](#213-df)
+		- [2.14. lenient](#214-lenient)
+		- [2.15. search_type](#215-search_type)
+		- [2.16. timeout](#216-timeout)
+		- [2.17. terminate_after](#217-terminate_after)
+		- [2.18. track_scores](#218-track_scores)
+		- [2.19. track_total_hits](#219-track_total_hits)
+		- [2.20. scroll](#220-scroll)
+	- [3. Pagination with Scroll](#3-pagination-with-scroll)
+		- [3.1. Get Initial Batch](#31-get-initial-batch)
+		- [3.2. Get Next Batches](#32-get-next-batches)
+			- [3.2.1. Response results exist](#321-response-results-exist)
+			- [3.2.2. Response results do not exist](#322-response-results-do-not-exist)
+		- [3.3. Cleanup Scroll](#33-cleanup-scroll)
+	- [4. Pagination with](#4-pagination-with)
 
 <!-- /TOC -->
 
@@ -405,6 +413,10 @@ See [Pagination with Scroll](#13-pagination-with-scroll) section.
 ?scroll=10m
 ```
 
+### search_after
+
+See [Pagination with search_after]() section
+
 - can only be specified in query string
 
 ## 1.3. Pagination with Scroll
@@ -478,4 +490,28 @@ DELETE /_search/scroll
 {
   "scroll_id": ["<id>"]
 }
+```
+- Limit of 500 open contexts per node by default
+- To increase, set `search.max_open_scroll_context` cluster setting
+## Pagination with search_after
+
+- cursor similar to scroll
+- but no snapshot
+- cheaper
+- based on sort and order
+- `from` should not be used when `search_after` is used
+
+```
+POST /cf_etf/search
+```
+```json
+{
+  "size": 2,
+  "sort" : {
+	  "rating": "desc",
+	  "symbol": "asc"
+  },
+  "search_after": [5, "EES"]
+}
+
 ```
